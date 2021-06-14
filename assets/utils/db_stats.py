@@ -1,12 +1,14 @@
 import os, sys, time
 
+from ..Config.main import *
+
 class db_Stats:
     def TotalUsers():
         db = len((open("./assets/db/users.db", "r").read()).split("\n"))
         return db
 
     def OnlineUsers():
-        db = len((open("./assets/db/current.db", "r").read()).split("\n"))
+        db = len(ServerConfig.clients)
         return db
 
     def TotalAttack():
