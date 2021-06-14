@@ -1,14 +1,15 @@
      ╔══════════════════╗   ╔══════════════════════╗   ╔══════════════════╗
      ║   Total Users    ║   ║  Total Online Users  ║   ║  Total Attacks   ║
      ╠══════════════════╣   ╠══════════════════════╣   ╠══════════════════╣
-     ║        0         ║   ║           0          ║   ║        2         ║
+     ║        {TOTALUSERS}         ║   ║           {ONLINEUSERS}          ║   ║        2         ║
      ╚══════════════════╝   ╚══════════════════════╝   ╚══════════════════╝
 
-   ╔═════════════════╦═══════════════════╗    ╔═════════════════════════════════════╗    
-   ║ Network Name    ║ Status            ║    ║         Account Information         ║
-   ╠═════════════════╬═══════════════════╣    ╠═════════════════════════════════════╣
-   ║ Verdant         ║ Online            ║    ║ Username        ║ {USERNAME}        ║
-   ║ OrphicSecurity  ║ Online            ║    ║ IP              ║ N/A               ║
-   ╚═════════════════╩═══════════════════╝    ║ Membership      ║ N/A               ║
-                                              ║ Maxtime         ║ N/A               ║
-                                              ║ Admin           ║ N/A               ║
+   {BG_BLUE}╔═════════════════╦═══════════════════╗{BG_RESET}    {BG_BLUE}╔═════════════════════════════════════╗{BG_RESET}    
+   {BG_BLUE}║ {RED}Network Name{RESET}    ║ {RED}Status{RESET}            ║{BG_RESET}    {BG_BLUE}║         Account Information         ║{BG_RESET}
+   {BG_BLUE}╚═════════════════╩═══════════════════╝{BG_RESET}    {BG_BLUE}╚═════════════════════════════════════╝{BG_RESET}
+   {BG_BLUE} SST               Online              {BG_RESET}    {BG_BLUE} Username         {USERNAME}                 {BG_RESET}
+   {BG_BLUE}                                       {BG_RESET}    {BG_BLUE} IP               N/A                  {BG_RESET}
+   {BG_BLUE}                                       {BG_RESET}    {BG_BLUE} Membership       N/A                  {BG_RESET}
+   {BG_BLUE}                                       {BG_RESET}    {BG_BLUE} Maxtime          N/A                  {BG_RESET}
+   {BG_BLUE}                                       {BG_RESET}    {BG_BLUE} Admin            N/A                  {BG_RESET}
+   {BG_BLUE}                                       {BG_RESET}    {BG_BLUE}                                       {BG_RESET}
