@@ -1,8 +1,8 @@
-{BG_BLACK}
-                         {PURPLE}╔═══════════════════════╗
-                         ║  {WHITE}Welcome To Wocky NET{PURPLE} ║
-                         ╚═══════════════════════╝{YELLOW}
+
+                         {WHITE}╔═══════════════════════╗
+                         ║  {PURPLE}Welcome To Wocky NET{WHITE} ║
+                         ╚═══════════════════════╝{WHITE}
 
      ╔════════════╗  ╔══════════════╗  ╔══════════════╗  ╔══════════════╗
-     ║ 1. {RED}Login{YELLOW}   ║  ║ 2. {RED}Register{YELLOW}  ║  ║ 3. {RED}Freemode{YELLOW}  ║  ║ 4. {RED}About{YELLOW}     ║
+     ║ 1. {PURPLE}Login{WHITE}   ║  ║ 2. {PURPLE}Register{WHITE}  ║  ║ 3. {PURPLE}Freemode{WHITE}  ║  ║ 4. {PURPLE}About{WHITE}     ║
      ╚════════════╝  ╚══════════════╝  ╚══════════════╝  ╚══════════════╝
