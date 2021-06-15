@@ -4,7 +4,7 @@ import sys, os, time
 ## Files
 from ..utils.main import *
 from ..utils.db_stats import *
-from assets.Config.main import Strings
+from ..Config.main import *
 
 
 class BannerModify:
@@ -59,11 +59,8 @@ class BannerFunc():
         bnnr = bnnr.replace("{ONLINEUSERS}", str(db_Stats.OnlineUsers()))
         bnnr = bnnr.replace("{TOTALATTACKS}", str(db_Stats.TotalAttack()))
 
-        # if Current.CurrentInfo['Username'] == None or Current.CurrentInfo['Username'] == "":
-        #     Current.CurrentInfo['Username'] == "Error"
-
-        # bnnr = bnnr.replace("{USERNAME}", Current.CurrentInfo['Username'])
-        # bnnr = bnnr.replace("{CURRENTIP}", Current.CurrentInfo['IP'])
+        bnnr = bnnr.replace("{USERNAME}", Strings.CurrentUser)
+        bnnr = bnnr.replace("{CURRENTIP}", Strings.CurrentIP)
 
         return bnnr # Im pretty sure we will return banner right?
 
@@ -72,6 +69,6 @@ class CustomBannerMaker:
         box = "                                                                            "
         boxlen = len(box)
 
-        new_line = "MOTD:" + motd + box[len("MOTD:" + motd):len(box)]
+        new_line = str(Strings.MainColors['Purple'] + "MOTD:" + motd + box[len("MOTD:" + motd):len(box)] + Strings.MainColors['Reset'])
 
         return f"╔═════════════════════════════════════════════════════════════════════════════╗\r\n║ {new_line}║\r\n╚═════════════════════════════════════════════════════════════════════════════╝\r\n"
