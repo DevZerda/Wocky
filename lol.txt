@@ -1,0 +1,52 @@
+for(2) {
+    {RED}testing this for_loop{RESET}
+}
+Stopping for 5 seconds.
+SLEEP(1)
+Stopping for 5 seconds..
+SLEEP(1)
+Stopping for 5 seconds...
+SLEEP(1)
+Stopping for 5 seconds....
+SLEEP(1)
+Stopping for 5 seconds.....
+SLEEP(1)
+Stopping for 5 seconds......
+╔════════════
+║  Welcome To
+╚════════════
+SLEEP(3)
+{CLEAR}
+             ═══════════╗
+              Wocky NET ║
+             ═══════════╝
+SLEEP(3)
+{CLEAR}
+╔════════════
+║  Welcome To
+╚════════════
+SLEEP(1)
+{CLEAR}
+             ═══════════╗
+              Wocky NET ║
+             ═══════════╝
+SLEEP(3)
+{CLEAR}
+╔════════════
+║  Welcome To
+╚════════════
+SLEEP(3)
+{CLEAR}
+             ═══════════╗
+              Wocky NET ║
+             ═══════════╝
+SLEEP(1)
+{CLEAR}
+╔═══════════════════════╗
+║  Welcome To Wocky NET ║
+╚═══════════════════════╝
+for(7) {
+spamming this 7 times
+}
+
+gang shit bitch
