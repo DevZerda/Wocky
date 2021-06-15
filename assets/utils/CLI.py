@@ -12,27 +12,68 @@ class CLI_Control:
 
 class CLI_CursorControl:
     """
+    Set cursor at a certain position on the current CLI
+    """
+    def setCursorPosition(socket, r, c):
+        socket.send(f"\033[{r};{c}f".encode())
+
+    """
+    Move cursor to a different line
+    PS. 0 is not an option
+    """
+    def setCursorToLine(socket, r):
+        socket.send(f"\033[{r};0f".encode())
+
+    def setCursorToColumn(socket, c):
+        socket.send(f"\033[0;{c}f".encode())
+
+    """
     Move cursor up once!
     """
     def MoveCursorUpOnce(socket):
-        socket.send("".encode())
+        socket.send("\033[1A".encode())
 
     """
     Move Cursor up the amount you choose
     PS: 0 is not an option!
     """
     def MoveCursorUp(socket, c):
-        send.send(f"".encode())
+        send.send(f"\033[{c}A".encode())
 
     """
     Move Cursor down once
     """
     def MoveCursorDownOnce(socket):
-        socket.send("".encode())
+        socket.send("\033[1B".encode())
 
     """
-    Move Cursor down the amount you choose
+    Move Cursor down by choice
     PS: 0 is not an option!
     """
     def MoveCursorDown(socket, c):
-        socket.send(f"".encode())
+        socket.send(f"\033[{c}B".encode())
+
+    """
+    Move Cursor left once
+    """
+    def MoveCursorLeftOnce(socket):
+        socket.send("\033[1D".encode())
+
+    """
+    Move Cursor left by choice
+    PS: 0 is not an option
+    """
+    def MoveCursorLeft(socket, c):
+        socket.send(f"\033[{c}D".encode())
+
+    """
+    Move Cursor right once
+    """
+    def MoveCursorRightOnce(socket):
+        socket.send("\033[1C".encode())
+
+    """
+    
+    """
+    def MoveCursorRight(socket, c):
+        socket.send(f"\033[{c}C".encode())
