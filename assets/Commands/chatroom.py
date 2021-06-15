@@ -14,4 +14,4 @@ def WockyChat(socket, addr):
         else:
             for u in ServerConfig.clients:
                 if u[1] != socket:
-                    u[1].send(str(msg).encode())
+                    u[1].send(str("\r" + msg + "\r\nMessage >>").encode())
