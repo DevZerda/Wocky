@@ -1,0 +1,22 @@
+   {WHITE}╔════════════════╦═══════════════════════════════════════════════════════╗
+   ║ {PURPLE}Command{WHITE}        ║ {PURPLE}Command Usage{WHITE}                                         ║
+   ╠════════════════╬═══════════════════════════════════════════════════════╣
+   ║ {PURPLE}Add User{WHITE}       ║ {PURPLE}admin add <user> <passwd> <lvl> <mtime> <admin>{WHITE}       ║
+   ║ {PURPLE}Remove User{WHITE}    ║ {PURPLE}admin remove <user>{WHITE}                                   ║
+   ║ {PURPLE}Update User{WHITE}    ║ {PURPLE}admin update <user> <lvl> <mtime> <admin>{WHITE}             ║
+   ║ {PURPLE}Reset IP{WHITE}       ║ {PURPLE}admin resetip <user>{WHITE}                                  ║
+   ║ {PURPLE}Change User PW{WHITE} ║ {PURPLE}admin passwd <user> <new_pw>{WHITE}                          ║
+   ║ {PURPLE}Block IP{WHITE}       ║ {PURPLE}admin block <ip>{WHITE}                                      ║
+   ║ {PURPLE}Blacklist IP{WHITE}   ║ {PURPLE}admin blacklist <ip>{WHITE}                                  ║
+   ║ {PURPLE}Login toggle{WHITE}   ║ {PURPLE}admin login <on/off>{WHITE}                                  ║
+   ║ {PURPLE}Attack toggle{WHITE}  ║ {PURPLE}admin attack <on/off>{WHITE}                                 ║
+   ║ {PURPLE}Search logs{WHITE}    ║ {PURPLE}admin search_log <user>{WHITE}                               ║
+   ║ {PURPLE}Search attacks{WHITE} ║ {PURPLE}admin search_attk <user>{WHITE}                              ║
+   ║ {PURPLE}Search logins{WHITE}  ║ {PURPLE}admin search_login <user>{WHITE}                             ║
+   ║ {PURPLE}Motd{WHITE}           ║ {PURPLE}admin motd <motd>{WHITE}                                     ║
+   ║ {PURPLE}Boardcast{WHITE}      ║ {PURPLE}admin boardcast <msg>{WHITE}                                 ║
+   ║ {PURPLE}Announce{WHITE}       ║ {PURPLE}admin announce <announcement>{WHITE}                         ║
+   ║ {PURPLE}Kick User{WHITE}      ║ {PURPLE}admin kick <user>{WHITE}                                     ║
+   ║ {PURPLE}Freeze User{WHITE}    ║ {PURPLE}admin freeze <user>{WHITE}                                   ║
+   ╚════════════════╩═══════════════════════════════════════════════════════╝
+   
