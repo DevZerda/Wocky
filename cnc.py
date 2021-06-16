@@ -17,8 +17,8 @@ from assets.Commands.command_handler import *
 
 buffer_length = 1024
 host = "0.0.0.0"
-port = 447
-bot_port = 445
+port = 422
+bot_port = 446
 bots = [ ]
 
 cp_hostname = "\rQuantum >>: "
