@@ -8,7 +8,9 @@ class CrudFunctions:
         r += f"IP: {info[1]}\n"
         r += f"Level: {info[3]}\n"
         r += f"Maxtime: {info[4]}\n"
-        r += f"Admin: {info[5]}\n"
+        r += f"Concurrents: {info[5]}\n"
+        r += f"On-going: {info[6]}\n"
+        r += f"Admin: {info[7]}\n"
         return r
 
 
@@ -47,18 +49,19 @@ class CrudFunctions:
             return "[x] Error, No user found!\r\n (This seems like a buggy function)"
 
         info = info.split(",")
-        if int(info[5]) == 1:
+        if int(info[7]) == 1:
             return True
         else:
             return False
-
+    # ('root','none','niggered','2','1200','2','2')
+    #     0     1        2       3     4    5   6
     def isAdmin(username):
         info = CRUD.GetUser(username)
         if info == "[x] Error, No user found!":
             return "[x] Error, No user found!\r\n (This seems like a buggy function)"
 
         info = info.split(",")
-        if int(info[5]) == 2:
+        if int(info[7]) == 2:
             return True
         else:
             return False
@@ -69,7 +72,7 @@ class CrudFunctions:
             return "[x] Error, No user found!\r\n (This seems like a buggy function)"
 
         info = info.split(",")
-        if int(info[5]) == 3:
+        if int(info[7]) == 3:
             return True
         else:
             return False
