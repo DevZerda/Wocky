@@ -1,5 +1,10 @@
 import os, sys, time, subprocess
 
+# db line example
+# ('root','none','niggered','2','1200','2','0','2')
+#    0      1        2       3     4    5   6   7
+#   user    ip      pw      lvl mtime  con cur adm
+
 class CRUD:
     def GetUser(Finduser):
         try:
@@ -26,13 +31,13 @@ class CRUD:
             print("File: /assets/auth/crud.py | Line: 4 | Function: GetUser(user)\r\n[x] Unable to find database file!\r\n")
             exit()
 
-    def CreateUser(user, password, level, maxtime, admin):
+    def CreateUser(user, password):
         try:
             if f"('{user}" in open("./assets/db/users.db", "r").read():
                 return f"[x] User: {user} is already taken, choose another username!"
 
             db = open("./assets/db/users.db", "a")
-            db.write(f"('{user}','none','{password}','{level}','{maxtime}','{admin}')\n")
+            db.write(f"('{user}','none','{password}','0','0','0','0','0')\n")
             db.close()
             return f"[+] User: {user} successfully added!\r\n"
         except:
@@ -48,7 +53,7 @@ class CRUD:
 
             for u in users:
                 if len(u) > 4:
-                    if user in u:
+                    if f"('{user}" in u:
                         ## Edit user here
                         print("User found and removed!")
                     else:
@@ -62,7 +67,7 @@ class CRUD:
             print("File: /assets/auth/crud.py | Line: 39 | Function: RemoveUser(user)\r\n[x] Error, Unable to find database file!\r\n")
             exit()
 
-    def updateUser(user, newlvl, newmtime, newadmin):
+    def updateUser(user, newlvl, newmtime, conn, newadmin):
         try:
             db = open("./assets/db/users.db", "r").read()
             users = db.split("\n")
@@ -75,7 +80,7 @@ class CRUD:
                         fix = usr.replace("('", "")
                         fix2 = fix.replace("')", "")
                         userinfo = fix2.split("','")
-                        new_db += "('" + userinfo[0] + "','" + userinfo[1] + "','" + userinfo[2] + "','" + newlvl + "','" + newmtime + "','" + newadmin + "')\n"
+                        new_db += f"('{userinfo[0]}','{userinfo[1]}','{userinfo[2]}','{newlvl}','{newmtime}','{conn}','{userinfo[6]}','{newadmin}')\n"
                     else:
                         new_db += usr
 
