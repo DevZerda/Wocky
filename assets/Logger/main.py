@@ -43,18 +43,18 @@ class LogTypes:
 
     def LogCommand(logThis):
         logsDB = open(os.getcwd() + "/assets/db/logs.db", "a")
-        logsDB.write(logThis)
+        logsDB.write(logThis + "\n")
         logsDB.close()
 
     def LogAttack(logThis):
         attkDB = open("./assets/db/attacks.db", "a")
-        attkDB.write(logThis)
+        attkDB.write(logThis + "\n")
         attkDB.close()
         
 
     def LogLogin(logThis):
         LoginDB = open("./assets/db/logins.db", "a")
-        LoginDB.write(logThis)
+        LoginDB.write(logThis + "\n")
         LoginDB.close()
 
 
