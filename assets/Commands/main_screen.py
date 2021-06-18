@@ -34,10 +34,12 @@ def login(socket, addr):
     # User Input Login Section
     socket.send("\rUsername: ".encode())
     username = socket.recv(buffer_length).decode().strip().replace("\r\n", "")
-    # socket.recv(1024)
+    socket.recv(512)
     socket.send("\rPassword: ".encode())
+    socket.recv(512)
     password = socket.recv(buffer_length).decode().strip().replace("\r\n", "")
-    # print(f"{username} | {password}") #Debugging
+
+    print(f"{username} | {password}") #Debugging
 
     # Login Check
     if "[+]" in Auth.Login(username, password, addr[0]): # This is a weird way of authentication lol 
