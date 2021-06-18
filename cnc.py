@@ -15,6 +15,7 @@ from assets.Commands.main_screen import *
 from assets.Commands.command_handler import *
 
 
+
 buffer_length = 1024
 host = "0.0.0.0"
 port = 422
