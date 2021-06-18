@@ -12,7 +12,7 @@ from .geo import *
 from .portscan import *
 from .attack import *
 from .chatroom import *
-from .admin import *
+from .admin_handler import *
 
 """
 help list 
@@ -35,7 +35,7 @@ def CMDHandler(socket, addr):
     socket.send(str("╔══════[Wocky]══[~]\r\n╚═══ $ ").encode())
     data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
 
-    print(data) # Debugging / Removing this later
+    print("CMD: " + data + " | Time: " + str(utils.CurrentTime()) + "\n") # Debugging / Removing this later
 
 
     if data.lower() == "dashboard":
