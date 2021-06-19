@@ -1,4 +1,8 @@
 
+class NetSettings:
+	login = True
+	stresser = True
+
 class ServerConfig:
 	clients = []
 	bots = []
@@ -71,7 +75,7 @@ class Strings:
 		g = 0
 		client_list = ""
 		for u in ServerConfig.clients:
-			client_list += str(f"Socket ID: {g} | Username: {u[0]} | IP: {u[2]}\r\n")
+			client_list += str(f"Socket ID: {g} | Username: {u[0]}\r\n")
 			g += 1
 		return client_list
 
