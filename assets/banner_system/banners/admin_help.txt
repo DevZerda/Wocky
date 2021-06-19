@@ -3,7 +3,7 @@
    ╠════════════════╬═══════════════════════════════════════════════════════╣
    ║ {PURPLE}Add User{WHITE}       ║ {PURPLE}admin add <user> <passwd> <lvl> <mtime> <admin>{WHITE}       ║
    ║ {PURPLE}Remove User{WHITE}    ║ {PURPLE}admin remove <user>{WHITE}                                   ║
-   ║ {PURPLE}Update User{WHITE}    ║ {PURPLE}admin update <user> <lvl> <mtime> <admin>{WHITE}             ║
+   ║ {PURPLE}Update User{WHITE}    ║ {PURPLE}admin update <user> <mtime> <conn> <admin>{WHITE}            ║
    ║ {PURPLE}Reset IP{WHITE}       ║ {PURPLE}admin resetip <user>{WHITE}                                  ║
    ║ {PURPLE}Change User PW{WHITE} ║ {PURPLE}admin passwd <user> <new_pw>{WHITE}                          ║
    ║ {PURPLE}Block IP{WHITE}       ║ {PURPLE}admin block <ip>{WHITE}                                      ║
