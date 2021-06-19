@@ -8,7 +8,7 @@ class CLI_Control:
         socket.send(str(f"\033]0;{msg}\007").encode())
 
     def set_TerminalSize(socket, r, c):
-        socket.send(str(f"").encode())
+        socket.send(str(f"\033[8;{r};{c}t").encode())
 
 class CLI_CursorControl:
     """
