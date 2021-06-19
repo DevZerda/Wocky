@@ -1,8 +1,10 @@
 
-                         {WHITE}╔═══════════════════════╗
-                         ║  {PURPLE}Welcome To Wocky NET{WHITE} ║
-                         ╚═══════════════════════╝{WHITE}
-
+                            {WHITE}╔═══════════════════════╗
+                            ║    {PURPLE}╦ ╦╔═╗╔═╗╦╔═╦ ╦{WHITE}    ║
+                            ║    {PURPLE}║║║║ ║║  ╠╩╗╚╦╝{WHITE}    ║
+                            ║    {PURPLE}╚╩╝╚═╝╚═╝╩ ╩ ╩{WHITE}     ║
+                            ╚═══════════════════════╝
+                            
      ╔════════════╗  ╔══════════════╗  ╔══════════════╗  ╔══════════════╗
-     ║ 1. {PURPLE}Login{WHITE}   ║  ║ 2. {PURPLE}Register{WHITE}  ║  ║ 3. {PURPLE}Freemode{WHITE}  ║  ║ 4. {PURPLE}About{WHITE}     ║
+     ║ 1. {PURPLE}Login{WHITE}   ║  ║ 2. {PURPLE}Register{WHITE}  ║  ║ 3. {PURPLE}Chatroom{WHITE}  ║  ║ 4. {PURPLE}About{WHITE}     ║
      ╚════════════╝  ╚══════════════╝  ╚══════════════╝  ╚══════════════╝
