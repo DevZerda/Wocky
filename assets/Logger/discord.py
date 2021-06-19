@@ -4,17 +4,18 @@ from discord_webhook import DiscordWebhook
 
 class Discord:
 	def send_news(msg):
-		msg = f"```{msg}```"
-		try:
-			webhook = DiscordWebhook(url='https://discord.com/api/webhooks/846082323158138881/l6AGbp9UMQqxeeetqzi5QHDkug1ftcdCiUFSkPynSrDkxZgBJzLGM-v4-aBz2tVoaLBm', content=msg)
-			webhook.execute()
-		except:
-			print("Failed to send discord notification!")
+		# msg = f"```{msg}```"
+		# try:
+		# 	webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/855628566557753344/9ykjtzdWUFP0RsAoARs9m3R2nJZSPoPJ2KR9wLdmzIpUdazXqUeaMOfVUE3F3MNCeFkS', content=msg)
+		# 	webhook.execute()
+		# except:
+		# 	print("Failed to send discord notification!")
+		return ""
 
 	def send_status(msg):
 		msg = f"```{msg}```"
 		try:
-			webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/844855350801072159/xPsomucP4neo4dOdGLBaIbRmz8ldvCr9617c2FcWgDjrwrvuemlc2shLtl5TJCjq6zi7', content=msg)
+			webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/855875753999859772/l5HDRhwRNUBI69M5lOlVI93fIx8tS99yMOOXgkl9s0jxozHSbP0wxdeHY9q_rhcSHl89', content=msg)
 			webhook.execute()
 		except:
 			print("Failed to send discord notification!")
@@ -22,7 +23,7 @@ class Discord:
 	def send_attack(msg):
 		msg = f"```{msg}```"
 		try:
-			webhook = DiscordWebhook(url='https://discord.com/api/webhooks/846080791829282846/WokclMPaJ8G3UGtS5huyMvqbAPDobwJDq-K_B4Nxe5khoJKTwPt9wB2m_FllKTbQcPa6', content=msg)
+			webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/855836697374883850/R5x5ABjxgZux4SdDcS899SxehEkIEaLIRKxO_HELlmVal8xYC2EPIvwMzifreLPd7Syd', content=msg)
 			webhook.execute()
 		except:
 			print("Failed to send discord notification!")
@@ -30,7 +31,7 @@ class Discord:
 	def send_login(msg):
 		msg = f"```{msg}```"
 		try:
-			webhook = DiscordWebhook(url='https://discord.com/api/webhooks/846081409659699211/dSkGHSLzYIrPrBcwqdfzBUqRKAkzme2Ibae0Wm-fjA6pmcRxzoy1naPYrf0Am5ItU7Mw', content=msg)
+			webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/855836899982049290/IzVYEFuEMM0muEeXSM0lQcbK93Xw2xEffcqHUjILmhGKbj7nhnr4XcZlB_2v-22zN4lI', content=msg)
 			webhook.execute()
 		except:
 			print("Failed to send discord notification!")
@@ -38,7 +39,7 @@ class Discord:
 	def send_logs(msg):
 		msg = f"```{msg}```"
 		try:
-			webhook = DiscordWebhook(url='https://discord.com/api/webhooks/844893815772282880/r20oO4fg-CkbmxLs_QhsmS0AHe_kQ4BzkvfTTYZx9Zmp7SKQqBRDCUfTDcUK5dsPC8-L', content=msg)
+			webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/855628566557753344/9ykjtzdWUFP0RsAoARs9m3R2nJZSPoPJ2KR9wLdmzIpUdazXqUeaMOfVUE3F3MNCeFkS', content=msg)
 			webhook.execute()
 		except:
 			print("Failed to send discord notification!")
