@@ -69,6 +69,6 @@ class CustomBannerMaker:
         box = "                                                                            "
         boxlen = len(box)
 
-        new_line = str(Strings.MainColors['Purple'] + "MOTD:" + motd + box[len("MOTD:" + motd):len(box)] + Strings.MainColors['Reset'])
+        new_line = str(Strings.MainColors['Purple'] + "MOTD: " + motd + box[len("MOTD: " + motd):len(box)] + Strings.MainColors['Reset'])
 
-        return f"╔═════════════════════════════════════════════════════════════════════════════╗\r\n║ {new_line}║\r\n╚═════════════════════════════════════════════════════════════════════════════╝\r\n"
+        return f"{Strings.MainColors['White']}╔═════════════════════════════════════════════════════════════════════════════╗\r\n║ {new_line}║\r\n╚═════════════════════════════════════════════════════════════════════════════╝\r\n"
