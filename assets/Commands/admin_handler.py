@@ -2,6 +2,7 @@ import os, sys, time
 
 from ..auth.crud import *
 from ..auth.crudFunc import *
+from ..auth.adminFunc import *
 from ..banner_system.modify import *
 from ..utils.main import *
 
@@ -14,50 +15,57 @@ def admin_command(socket, addr, data):
 
             if len(args) == 0:
                 socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main") + BannerModify.GetBannerFromFile("admin_help")).encode())
+            elif args[1] == "userlist":
+                socket.send(str(AdminFunc.show_all_users()).encode())
             elif args[1] == "add":
                 CRUD.CreateUser(args[2], args[3])
             elif args[1] == "remove":
                 CRUD.RemoveUser(args[2])
             elif args[1] == "update":
-                CRUD.updateUser(args[2], args[3], args[4], args[5], args[6])
+                CRUD.updateUser(args[2], args[3], args[4], args[5])
             elif args[1] == "resetip":
                 # finishing later
                 pass
             elif args[1] == "changepw":
                 CrudFunctions.changePW(args[2], args[3])
-            elif args[1] == "blockip":
+            elif args[1] == "blockip": ## need to finish
                 pass
-            elif args[1] == "blacklistip":
+            elif args[1] == "blacklistip": ## need to finish
                 pass
             elif args[1] == "login":
                 if args[2] == "on":
-                    pass
+                    NetSettings.login = True
+                    socket.send(f"[+] Successfully changed login status (Current status: {NetSettings.login})\r\n".encode())
                 elif args[2] == "off":
-                    pass
+                    NetSettings.login = False
+                    socket.send(f"[+] Successfully changed login status (Current status: {NetSettings.login})\r\n".encode())
                 else:
-                    pass
+                    socket.send("[x] Error, Invalid argument\r\n".encode())
             elif args[1] == "stresser":
                 if args[2] == "on":
-                    pass
+                    NetSettings.stresser = True
+                    socket.send(f"[+] Successfully changed stresser status (Current status: {NetSettings.stresser})\r\n".encode())
                 elif args[2] == "off":
-                    pass
+                    NetSettings.stresser = False
+                    socket.send(f"[+] Successfully changed stresser status (Current status: {NetSettings.stresser})\r\n".encode())
                 else:
-                    pass
-            elif args[1] == "searchlogs":
+                    socket.send("[x] Error, Invalid argument\r\n".encode())
+            elif args[1] == "searchlogs": ## need to finish
                 pass
-            elif args[1] == "searchattacks":
+            elif args[1] == "searchattacks": ## need to finish
                 pass
-            elif args[1] == "searchlogins":
+            elif args[1] == "searchlogins": ## need to finish
                 pass
             elif args[1] == "motd":
+                newMOTD = data.replace(f"{args[0]} {args[1]} ", "")
+                socket.send(str(utils.changeMOTD(newMOTD)).encode())
+            elif args[1] == "boardcast": ## need to finish
                 pass
-            elif args[1] == "boardcast": 
-                pass
-            elif args[1] == "announce":
+            elif args[1] == "announce": ## need to finish
                 pass
             elif args[1] == "kick":
-                pass
-            elif args[1] == "freeze":
+                AdminFunc.kick_user(socket, data.split(" ")[2])
+            elif args[1] == "freeze": ## need to finish
                 pass
         else:
             lol = BannerModify.GetBannerFromFile("admin_help")
