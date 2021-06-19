@@ -67,7 +67,7 @@ class CRUD:
             print("File: /assets/auth/crud.py | Line: 39 | Function: RemoveUser(user)\r\n[x] Error, Unable to find database file!\r\n")
             exit()
 
-    def updateUser(user, newlvl, newmtime, conn, newadmin):
+    def updateUser(user, newmtime, conn, newadmin):
         try:
             db = open("./assets/db/users.db", "r").read()
             users = db.split("\n")
@@ -76,13 +76,13 @@ class CRUD:
 
             for usr in users:
                 if len(usr) > 5:
-                    if usr.startswith("('" + usr):
+                    if usr.startswith("('" + user):
                         fix = usr.replace("('", "")
                         fix2 = fix.replace("')", "")
                         userinfo = fix2.split("','")
-                        new_db += f"('{userinfo[0]}','{userinfo[1]}','{userinfo[2]}','{newlvl}','{newmtime}','{conn}','{userinfo[6]}','{newadmin}')\n"
+                        new_db += f"('{userinfo[0]}','{userinfo[1]}','{userinfo[2]}','{userinfo[3]}','{newmtime}','{conn}','{userinfo[6]}','{newadmin}')\n"
                     else:
-                        new_db += usr
+                        new_db += usr + "\n"
 
             w_db = open("./assets/db/users.db", "w")
             w_db.write(new_db)
