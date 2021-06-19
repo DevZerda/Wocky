@@ -1,5 +1,7 @@
 
                             {WHITE}╔═══════════════════════╗
-                            ║  {PURPLE}Welcome To Wocky NET{WHITE} ║
+                            ║    {PURPLE}╦ ╦╔═╗╔═╗╦╔═╦ ╦{WHITE}    ║
+                            ║    {PURPLE}║║║║ ║║  ╠╩╗╚╦╝{WHITE}    ║
+                            ║    {PURPLE}╚╩╝╚═╝╚═╝╩ ╩ ╩{WHITE}     ║
                             ╚═══════════════════════╝
                        User: {PURPLE}{USERNAME}{WHITE} | Current IP: {PURPLE}{CURRENTIP}{RESET}
