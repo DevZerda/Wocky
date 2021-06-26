@@ -1,7 +1,17 @@
-
-                            {WHITE}╔═══════════════════════╗
-                            ║    {PURPLE}╦ ╦╔═╗╔═╗╦╔═╦ ╦{WHITE}    ║
-                            ║    {PURPLE}║║║║ ║║  ╠╩╗╚╦╝{WHITE}    ║
-                            ║    {PURPLE}╚╩╝╚═╝╚═╝╩ ╩ ╩{WHITE}     ║
-                            ╚═══════════════════════╝
-                       User: {PURPLE}{USERNAME}{WHITE} | Current IP: {PURPLE}{CURRENTIP}{RESET}
+     
+                           {PURPLE}╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦ ╦  ╔═╗╔╗╔╔═╗
+                           ╚═╗║ ║║  ║║╣  ║ ╚╦╝  ║  ║║║║  
+                           ╚═╝╚═╝╚═╝╩╚═╝ ╩  ╩   ╚═╝╝╚╝╚═╝       
+                           ═╦══════════════════════════╦═
+                  ╔═════════╩══════════════════════════╩═════════╗
+                  ║   Welcome To The Start Screen Of Society C2  ║
+                  ║      Powered By SocietyAPI and Many More.    ║
+                  ╚╦════════════════════════════════════════════╦╝
+                   ╚══╦══════════════════{GREEN}════════════════════╦══╝
+                      ║ - - -     discord.gg/scty     - - -  ║
+                   ╔══╩══════════════════════════════════════╩══╗
+                  ╔╩════════════════════════════════════════════╩╗
+                  ║   Type 'help' to see all Cynicals Commands.  ║
+                  ║  Copyright 2021 Society All Rights Reserved  ║
+                  ╚══════════════════════════════════════════════╝
+                      User: {PURPLE}{USERNAME}{GREEN} | Current IP: {PURPLE}{CURRENTIP}{RESET}
