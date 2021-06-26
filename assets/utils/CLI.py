@@ -3,6 +3,8 @@ import os, sys, time
 
 # Files
 
+# this file isnt done u gonna add more lol ! yh
+
 class CLI_Control:
     def set_Title(socket, msg):
         socket.send(str(f"\033]0;{msg}\007").encode())
@@ -77,3 +79,22 @@ class CLI_CursorControl:
     """
     def MoveCursorRight(socket, c):
         socket.send(f"\033[{c}C".encode())
+
+
+class CLI_EraserControl:
+    def HideCursor(socket):
+        socket.send("\033[?251".encode())
+
+    def ShowCursor(socket):
+        socket.send("\033[?25h\033[?0c".encode())
+
+
+def FlashCursor(socket):
+    i = 0
+    while(True):
+        CLI_EraserControl.HideCursor(socket)
+        time.sleep(2)
+        CLI_EraserControl.ShowCursor(socket)
+        if i == 10:
+            return
+        i+=1
