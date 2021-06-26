@@ -10,9 +10,8 @@ class MainLogger:
     def Log(logType, notification):
         logResp = "Log: " + logType + " | Time: " + str(utils.CurrentTime()) + "\n"
         if "CMD" in logType:
-            logResp += "User: " + Current.CurrentInfo['Username'] + " | IP: " + Current.CurrentInfo['IP'] + "\n"
-            logResp += "Level: " + str(Current.CurrentInfo['Level']) + " | Admin: " + str(Current.CurrentInfo['Admin']) + "\n"
-            logResp += "Cmd: " + Current.CurrentCmd['Cmd'] + " | Full CMD: " + Current.CurrentCmd['fullcmd'] + "\n"
+            logResp += "User: " + Strings.CurrentUser + " | IP: " + Strings.CurrentIP + "\n"
+            logResp += "Full CMD: " + Current.CurrentCmd['fullcmd'] + "\n"
         else:
             logResp = logType
         print(logResp)
