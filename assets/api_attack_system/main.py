@@ -47,9 +47,9 @@ class APICrud:
 # api_Access=false
 # api_Funnels=SOCIETY-OVH:LDAP,SOCIETY-HOME:HOME-SLAP               
     
-    def addAPI(apiName, api, methods):
+    def addAPI(apiName, api, methods, usemode):
         apiDB = open("./assets/db/users.db", "a")
-        apiDB.write(f"api_Name={apiName}\napi_URL={api}\napi_Methods={methods}\n")
+        apiDB.write(f"api_Name={apiName}\napi_URL={api}\napi_Methods={methods}\napi_Access={usemode}\n")
 
     def removeAPI(apiName):
         pass
