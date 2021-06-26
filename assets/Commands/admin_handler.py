@@ -5,9 +5,11 @@ from ..auth.crudFunc import *
 from ..auth.adminFunc import *
 from ..banner_system.modify import *
 from ..utils.main import *
+from ..Config.main import *
+from ..Config.functions import *
 
 def admin_command(socket, addr, data):
-    if CrudFunctions.isReseller(Strings.GetCurrentUsername(socket)) or CrudFunctions.isAdmin(Strings.GetCurrentUsername(socket)) or CrudFunctions.isOwner(Strings.GetCurrentUsername(socket)):
+    if CrudFunctions.isReseller(ServerUtils.GetCurrentUsername(socket)) or CrudFunctions.isAdmin(ServerUtils.GetCurrentUsername(socket)) or CrudFunctions.isOwner(ServerUtils.GetCurrentUsername(socket)):
         if len(data) > len("admin "):
             args = []
             if " " in data:
