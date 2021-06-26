@@ -1,0 +1,16 @@
+                         {PURPLE}╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦ ╦  ╔═╗╔╗╔╔═╗
+                         ╚═╗║ ║║  ║║╣  ║ ╚╦╝  ║  ║║║║  
+                         ╚═╝╚═╝╚═╝╩╚═╝ ╩  ╩   ╚═╝╝╚╝╚═╝{WHITE}    
+                         ═╦══════════════════════════╦═
+                ╔═════════╩══════════════════════════╩═════════╗
+                ║   {PURPLE}Welcome To The Start Screen Of Society C2{WHITE}  ║
+                ║      {PURPLE}Powered By SocietyAPI and Many More.{WHITE}    ║
+                ╚╦════════════════════════════════════════════╦╝
+                 ╚══╦══════════════════════════════════════╦══╝
+                    ║   - - - {PURPLE}Discord.io/SocietyC2{WHITE} - - -   ║
+                 ╔══╩══════════════════════════════════════╩══╗
+                ╔╩════════════════════════════════════════════╩╗
+                ║   {PURPLE}Type 'help' to see all Societys Commands.{WHITE}  ║
+                ║  {PURPLE}Copyright 2021 Society All Rights Reserved{WHITE}  ║
+                ╚══════════════════════════════════════════════╝
+                      User: {PURPLE}{USERNAME}{WHITE} | Current IP: {PURPLE}{CURRENTIP}{RESET}
