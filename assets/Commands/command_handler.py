@@ -6,6 +6,8 @@ from ..auth.crudFunc import *
 from ..Config.main import *
 from ..Config.functions import *
 from ..banner_system.modify import *
+from ..utils.db_lookup import *
+from ..utils.CLI import *
 
 # Commands
 from .geo import *
@@ -29,11 +31,20 @@ methods
 buffer_length = 1024
 
 def CMDHandler(socket, addr):
-    Strings.CurrentUser = ServerUtils.GetCurrentUsername(socket)
-    Strings.CurrentIP = ServerUtils.GetCurrentIP(socket)
+    if socket in ServerConfig.clients:
+        Strings.CurrentUser = ServerUtils.GetCurrentUsername(socket)
+        Strings.CurrentIP = ServerUtils.GetCurrentIP(socket)
+        Strings.CurrentLvl = ServerUtils.GetCurrentLvl(socket)
+        Strings.CurrentMtime = ServerUtils.GetCurrentMaxtime(socket)
+        Strings.CurrentConn = ServerUtils.GetCurrentConn(socket)
+        Strings.CurrentAdmin = ServerUtils.GetCurrentAdmin(socket)
+    try:
+        CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
+    except:
+        print("User disconnected")
 
+  
     # Request for user input 
-    socket.send(str("\r[~]════[Wocky]══$ ").encode())
     data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
 
     if data != "":
@@ -47,7 +58,7 @@ def CMDHandler(socket, addr):
         elif data.lower() == "clear" or data.lower() == "cls":
             socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main")).encode())
         elif data.lower() == "whoami":
-            socket.send(str(Strings.GetCurrentUsername(socket)).encode())
+            socket.send(str(ServerUtils.GetCurrentUsername(socket)(socket)).encode())
         elif data.lower() == "info":
             socket.send(str(CrudFunctions.MyStats(Strings.CurrentUser)).encode())
         elif "passwd" in data:
@@ -77,5 +88,18 @@ def CMDHandler(socket, addr):
             WockyChat(socket, addr)
         elif "msg" in data:
             msg_user(socket, data)
+        elif data.lower() == "logs":
+            socket.send(str(dbLookup.logs(Strings.CurrentUser)).encode())
+        elif data.lower() == "hide":
+            CLI_EraserControl.HideCursor(socket)
+        elif data.lower() == "show":
+            CLI_EraserControl.ShowCursor(socket)
         elif "admin" in data:
             admin_command(socket, addr, data)
+
+    
+    socket.send(str(f"\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢").encode())
+
+    if data != "":
+        LogTypes.LogCommand(f"('{Strings.CurrentUser}','{data}','{str(utils.CurrentTime())}')")
+        Discord.send_logs(f"[NEW COMMAND]\r\n[User]: {Strings.CurrentUser} | [IP]: {Strings.CurrentIP}\r\n[COMMAND]: {data}")
