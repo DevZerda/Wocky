@@ -15,9 +15,10 @@ def MainScreen(socket, addr):
     socket.send(str(Strings.MainColors['Clear'] +  BannerModify.GetBannerFromFile("main_screen")).encode())
     socket.send("                        Choose an option: ".encode())
     option_dude = socket.recv(buffer_length).decode().strip().replace("\r\n", "")
-    if int(option_dude) == 1 or option_dude.lower() == "login":
+    # try:
+    if int(option_dude) == 1:
         login(socket,addr)
-    elif int(option_dude) == 2 or option_dude.lower() == "register":
+    elif int(option_dude) == 2:
         register(socket,addr)
     # elif int(option_dude) == 3 or option_dude == "chatroom":
     #     ServerConfig.clients.append(["Guest" + str(random.randint(0, 99999)), socket, addr[0], addr[1]])
@@ -27,7 +28,9 @@ def MainScreen(socket, addr):
     else:
         socket.send("[x] Error, Wrong option!\r\n".encode())
         socket.close()
-
+    # except:
+    #     socket.send("[x] Error, You didnt choose a number!".encode())
+    #     socket.close()
 
 
 def login(socket, addr):
@@ -50,7 +53,7 @@ def login(socket, addr):
             Strings.CurrentIP = addr[0]
             userinfo = CRUD
             socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main") + "\r\n").encode())
-            socket.send(f"Welcome to Quantum Net {username}\r\n".encode())
+            socket.send(f"Welcome to Society {username}\r\n".encode())
             MainLogger.Log(f"login: {username} | Time: {utils.CurrentTime()}", True)
             ServerConfig.clients.append([username, socket, addr[0], addr[1]])
         else:
@@ -66,7 +69,7 @@ def register(socket, addr): ##) Function not finished
     username = socket.recv(buffer_length).decode().strip().replace("\r\n","")
     socket.send("Password: ".encode())
     password = socket.recv(buffer_length).decode().strip().replace("\r\n", "")
-    Current.CurrentInfo['Username'] = username
+    # Current.CurrentInfo['Username'] = username
 
 
 
