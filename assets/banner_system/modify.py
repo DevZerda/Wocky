@@ -54,6 +54,9 @@ class BannerFunc():
         bnnr = bnnr.replace("{BG_LIGHTYELLOW}", Strings.MainColors['Background_LightYellow'])
         bnnr = bnnr.replace("{BG_RESET}", Strings.MainColors['Background_Reset'])
 
+        bnnr = bnnr.replace("{CLEAR}", Strings.MainColors['Clear'])
+        bnnr = bnnr.replace("{NEWLINE}", "\r\n")
+
         
         bnnr = bnnr.replace("{TOTALUSERS}", str(db_Stats.TotalUsers()))
         bnnr = bnnr.replace("{ONLINEUSERS}", str(db_Stats.OnlineUsers()))
@@ -61,6 +64,10 @@ class BannerFunc():
 
         bnnr = bnnr.replace("{USERNAME}", Strings.CurrentUser)
         bnnr = bnnr.replace("{CURRENTIP}", Strings.CurrentIP)
+        bnnr = bnnr.replace("{CURRENTRANK}", Strings.CurrentLvl)
+        bnnr = bnnr.replace("{CURRENTMTIME}", Strings.CurrentMtime)
+        bnnr = bnnr.replace("{CURRENTCONN}", Strings.CurrentConn)
+        bnnr = bnnr.replace("{CURRENTADMIN}", Strings.CurrentAdmin)
 
         return bnnr # Im pretty sure we will return banner right?
 
