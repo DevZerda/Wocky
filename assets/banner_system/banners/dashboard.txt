@@ -9,9 +9,8 @@
   ╚═════════════════╩═══════════════╝ ╚═════════════════════════════════════╝
    SST               Online            Username         {USERNAME}
                                        IP               {CURRENTIP}
-                                       Membership       N/A
-                                       Maxtime          N/A
-                                       Concurrent       N/A
-                                       On-Going         N/A
-                                       Admin            N/A
+                                       Membership       {CURRENTRANK}
+                                       Maxtime          {CURRENTMTIME}
+                                       Concurrent       {CURRENTCONN}
+                                       Admin            {CURRENTADMIN}
 
