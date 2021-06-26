@@ -56,9 +56,11 @@ class APICrud:
             i += 1
             if len(api) > 5:
                 if api.startswith("api_Methods="):
-                    if f",{method}" in api or f"{method}," in api:
-                        apiiName = apis[i-3].replace("api_Name=", "")
-                        apiURL = apis[i-2].replace("api_URL=", "")
+                    apiiName = apis[i-3].replace("api_Name=", "")
+                    apiURL = apis[i-2].replace("api_URL=", "")
+                    # print(f"{api} {apiiName} | {apiURL}\r\n")
+                    if f"|{method}" in api or f"{method}|" in api:
+                        # print("here")
                         ListOfAPIs.append([apiiName, apiURL])
         return ListOfAPIs
 
