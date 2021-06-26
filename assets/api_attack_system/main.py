@@ -35,11 +35,12 @@ class APICrud:
             if len(api) > 5:
                 if api.startswith(f"api_Name={apiName}"):
                     apiName = api.replace("api_Name=", "")
-                    apiURL = apis[i+1].replace("api_URL=", "")
-                    apiMethods = apis[i+2].replace("api_Methods=", "")
-                    apiAccess = apis[i+4].replace("api_Access=", "")
-                    return f"{i-1},{apiName},{apiURL},{apiMethods},{apiAccess}"
+                    apiURL = apis[i].replace("api_URL=", "")
+                    apiMethods = apis[i+1].replace("api_Methods=", "")
+                    apiAccess = apis[i+2].replace("api_Access=", "")
+                    return f"{apiName},{apiURL},{apiMethods},{apiAccess}"
         return "[x] Error, No API Found!"
+
 # api_Name=WockAPI
 # api_URL=https://WockSec.xyz/api/L4.php?key=fRgtw4t54hFWUj675$ge&host={ip}&port={port}&time={time}&method={method}
 # api_Methods=OVH
@@ -48,7 +49,7 @@ class APICrud:
     
     def addAPI(apiName, api, methods):
         apiDB = open("./assets/db/users.db", "a")
-        apiDB.write(f"apiName=")
+        apiDB.write(f"api_Name={apiName}\napi_URL={api}\napi_Methods={methods}\n")
 
     def removeAPI(apiName):
         pass
