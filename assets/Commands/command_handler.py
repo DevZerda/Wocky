@@ -40,12 +40,14 @@ def CMDHandler(socket, addr):
         Strings.CurrentAdmin = ServerUtils.GetCurrentAdmin(socket)
     try:
         CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
+        # Request for user input 
+        data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
     except:
         print("User disconnected")
 
   
     # Request for user input 
-    data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
+    # data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
 
     if data != "":
         print(f"Username: {Strings.CurrentUser} | CMD: " + data + " | Time: " + str(utils.CurrentTime()) + "\n") # Debugging / Removing this later
