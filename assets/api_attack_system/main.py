@@ -5,6 +5,10 @@ from ..auth.crud import *
 from ..auth.crudFunc import *
 
 class APICrud:
+    """
+    Doc
+    List of APIs [Format: ID, API Name, API Domain, API Access]
+    """
     def listAPIs():
         apiDB = open("./assets/db/apis.db", "r").read()
         apis = apiDB.split("\n")
@@ -26,6 +30,9 @@ class APICrud:
 
         return api_List
 
+    """
+    Returns API info split with commas
+    """
     def GetAPI(apiiName):
         apiDB = open("./assets/db/apis.db", "r").read()
         apis = apiDB.split("\n")
@@ -42,6 +49,10 @@ class APICrud:
                     return f"{apiiName},{apiURL},{apiMethods},{apiAccess}"
         return "[x] Error, No API Found!"
 
+    """
+    Doc
+    Return a 2D Array (Format Per Key: [apiName, apiURL])
+    """
     def GetAPIWithMethod(method):
         """
         This function return a 2D Array of the APIs to send attack with and the name of the API
@@ -63,20 +74,23 @@ class APICrud:
                     if f"|{method}" in api or f"{method}|" in api:
                         # print("here")
                         ListOfAPIs.append([apiiName, apiURL])
-        return ListOfAPIs
-
-# api_Name=WockAPI
-# api_URL=https://WockSec.xyz/api/L4.php?key=fRgtw4t54hFWUj675$ge&host={ip}&port={port}&time={time}&method={method}
-# api_Methods=OVH
-# api_Access=false
-# api_Funnels=SOCIETY-OVH:LDAP,SOCIETY-HOME:HOME-SLAP               
-    
+        return ListOfAPIs   
+                  
+    """
+    Doc
+    Adds an API to the database 
+    Note: dup check will be added
+    """
     def addAPI(apiName, api, methods, usemode):
         apiDB = open("./assets/db/users.db", "a")
         apiDB.write(f"api_Name={apiName}\napi_URL={api}\napi_Methods={methods}\napi_Access={usemode}\napi_Funnel=N/A\n")
         apiDB.close()
         return f"[+] API: {apiName} successfully added!\r\n"
 
+    """
+    Doc
+    Removes an API from database
+    """
     def removeAPI(apiName):
         apiDB = open("./assets/db/apis.db", "r").read()
         apis = apiDB.split("\n")
@@ -102,7 +116,10 @@ class APICrud:
     def updateAPI(apiName, new_api, methods):
         pass
 
-    
+    """
+    Doc
+    Returns the original method if a renamed method was called
+    """
     def fixFunneledMethods(apiName, method):
         apiDB = open("./assets/db/apis.db", "r").read()
         apis = apiDB.split("\n")
@@ -127,10 +144,11 @@ class APICrud:
         
 
 class APIFunc:
+    """
+    Doc
+    Sends attack to APIs based on the method being used
+    """
     def SendAPI_Attack(ip, port, time, method):
-        """
-        Get APIs based on the method being used
-        """
         APIs = APICrud.GetAPIWithMethod(method) ## 2D Array
 
         Response = ""
