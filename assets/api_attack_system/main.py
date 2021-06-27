@@ -9,9 +9,10 @@ class APICrud:
         apiDB = open("./assets/db/apis.db", "r").read()
         apis = apiDB.split("\n")
 
-        api_List = "ID | API Name             API Domain                  API Access\r\n______________________________________________________________________________________\r\n"
+        api_List = "ID | API Name             API Domain                  API Access\r\n_____________________________________________________________________________\r\n"
 
         i = 0
+        api_c = 0
         for api in apis:
             i += 1
             if len(api) > 5:
@@ -20,8 +21,8 @@ class APICrud:
                     apiURL = apis[i].replace("api_URL=", "")
                     apiMethods = apis[i+1].replace("api_Methods=", "")
                     apiAccess = apis[i+2].replace("api_Access=", "")
-                    print(apiAccess)
-                    api_List += f"{str(i-1)}  | {apiName}\t {apiURL[0:31]}\t {apiAccess}\r\n\r\n"
+                    api_List += f"{str(api_c)}  | {apiName}\t {apiURL[0:31]}\t {apiAccess}\r\n\r\n"
+                    api_c+=1
 
         return api_List
 
