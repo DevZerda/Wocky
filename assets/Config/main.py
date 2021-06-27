@@ -1,3 +1,7 @@
+import os, sys, time
+
+from ..auth.main import *
+from ..auth.crud import *
 
 class NetSettings:
 	login = True
@@ -85,7 +89,7 @@ class ServerFunc:
 		i = 0
 		for usr in ServerConfig.clients:
 			if usr[0] == user:
-				u[4] = info[3] #lvl
-				u[5] = info[4] #maxtime
-				u[6] = info[5] #con
-				u[7] = info[7] #admin
+				usr[4] = info[3] #lvl
+				usr[5] = info[4] #maxtime
+				usr[6] = info[5] #con
+				usr[7] = info[7] #admin
