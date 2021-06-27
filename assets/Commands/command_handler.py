@@ -38,13 +38,10 @@ def CMDHandler(socket, addr):
         Strings.CurrentMtime = ServerUtils.GetCurrentMaxtime(socket)
         Strings.CurrentConn = ServerUtils.GetCurrentConn(socket)
         Strings.CurrentAdmin = ServerUtils.GetCurrentAdmin(socket)
-    data = ""
-    try:
-        CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
-        # Request for user input 
-        data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
-    except:
-        print("User disconnected")
+    
+    CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
+    # Request for user input 
+    data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
 
   
     # Request for user input 
@@ -100,7 +97,7 @@ def CMDHandler(socket, addr):
         elif "admin" in data:
             admin_command(socket, addr, data)
 
-        socket.send(str(f"\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢ ").encode())
+        socket.send(str(f"\x1b[37m╔═[\x1b[35m{Strings.CurrentUser}\x1b[37m@\x1b[35mSociety\x1b[37m]\r\n╚════➢\x1b[32m ").encode())
 
         LogTypes.LogCommand(f"('{Strings.CurrentUser}','{data}','{str(utils.CurrentDateTime())}')")
         Discord.send_logs(f"[NEW COMMAND]\r\n[User]: {Strings.CurrentUser} | [IP]: {Strings.CurrentIP}\r\n[COMMAND]: {data}")
