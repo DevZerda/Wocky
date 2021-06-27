@@ -1,4 +1,4 @@
-import os, sys, time
+import os, sys, time, threading
 
 from ..auth.crud import *
 from ..auth.crudFunc import *
@@ -7,6 +7,10 @@ from ..banner_system.modify import *
 from ..utils.main import *
 from ..Config.main import *
 from ..Config.functions import *
+from ..api_attack_system.main import *
+
+# Admin Commands
+from .admin_boardcast import *
 
 def admin_command(socket, addr, data):
     if CrudFunctions.isReseller(ServerUtils.GetCurrentUsername(socket)) or CrudFunctions.isAdmin(ServerUtils.GetCurrentUsername(socket)) or CrudFunctions.isOwner(ServerUtils.GetCurrentUsername(socket)):
@@ -61,13 +65,22 @@ def admin_command(socket, addr, data):
             elif args[1] == "motd":
                 newMOTD = data.replace(f"{args[0]} {args[1]} ", "")
                 socket.send(str(utils.changeMOTD(newMOTD)).encode())
-            elif args[1] == "boardcast": ## need to finish
-                pass
+            elif args[1] == "boardcast":
+                boardcastmsg = data.replace(f"{args[0]} {args[1]} {args[2]} ", "")
+                threading.Thread(target=Boardcast, args=(socket, int(args[2]), boardcastmsg)).start()
             elif args[1] == "announce": ## need to finish
                 pass
             elif args[1] == "kick":
                 AdminFunc.kick_user(socket, data.split(" ")[2])
             elif args[1] == "freeze": ## need to finish
+                pass
+            elif args[1] == "apilist":
+                socket.send(str(APICrud.listAPIs()).encode())
+            elif args[1] == "addapi":
+                pass
+            elif args[1] == "rmapi":
+                pass
+            elif args[1] == "updateapi":
                 pass
         else:
             lol = BannerModify.GetBannerFromFile("admin_help")
