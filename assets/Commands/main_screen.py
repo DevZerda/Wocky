@@ -53,8 +53,8 @@ def login(socket, addr):
             Strings.CurrentIP = addr[0]
             userinfo = CRUD
             socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main") + "\r\n").encode())
-            socket.send(f"Welcome to Society {username}\r\n".encode())
-            MainLogger.Log(f"login: {username} | Time: {utils.CurrentTime()}", True)
+            socket.send(f"Welcome to Society {username}\r\n\x1b[34m╔═[{Strings.CurrentUser}@Society]\r\n\x1b[34m╚════\x1b[31m➢ ".encode())
+            MainLogger.Log(f"login: {username} | Time: {utils.CurrentDateTime()}", True)
             ServerConfig.clients.append([username, socket, addr[0], addr[1]])
         else:
             socket.send(f"{Strings.MainColors['Reset']}[x] Error, Incorrect username or password. Try again....".encode())
