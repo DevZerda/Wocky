@@ -8,7 +8,7 @@ from ..banner_system.modify import *
 def Boardcast(socket, boardtime, msg):
     if isinstance(boardtime, int):
         for usr in ServerConfig.clients:
-                usr[1].send(f"\x1b]0;{msg}\007".encode())
+                usr[1].send(str(f"\x1b]0;{msg}\007").encode())
 
         socket.send("[+] Successfully sent boardcast message!\r\n".encode())
         for i in range(0, int(boardtime)):
