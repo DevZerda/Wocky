@@ -3,8 +3,6 @@ import os, sys, time
 
 # Files
 
-# this file isnt done u gonna add more lol ! yh
-
 class CLI_Control:
     def set_Title(socket, msg):
         socket.send(str(f"\033]0;{msg}\007").encode())
@@ -40,7 +38,7 @@ class CLI_CursorControl:
     PS: 0 is not an option!
     """
     def MoveCursorUp(socket, c):
-        send.send(f"\033[{c}A".encode())
+        socket.send(f"\033[{c}A".encode())
 
     """
     Move Cursor down once
