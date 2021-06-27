@@ -5,15 +5,9 @@ class utils:
     def set_Title(socket, msg):
         socket.send(f"\033]0;{msg}\007".encode())
 
-    def CurrentTime(): # This is date and time not just time !
-        return datetime.datetime.now()
-
-    def CheckForPython3Unix():
-        if GetOS() == True:
-            if os.path.isfile("/usr/bin/python3"):
-                return True
-            else:
-                return False
+    def CurrentDateTime(): # This is date and time not just time !
+        now = datetime.datetime.now()
+        return now
 
     def FlashingCursor(socket):
         while(True):
@@ -31,6 +25,16 @@ class utils:
     def GetMOTD():
         motd = open("./assets/db/motd.db", "r").read()
         return motd
+
+    def changeTitle(newT):
+        w_title = open("./assets/db/wocky_title.db", "w")
+        w_title.write(newT)
+        w_title.close()
+        return "[+] Title successfully changed!\r\n"
+
+    def GetTitle():
+        title = open("./assets/db/wocky_title.db", "r").read()
+        return title
 
 
 class OS_Func:
