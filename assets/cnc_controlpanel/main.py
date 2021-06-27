@@ -14,7 +14,7 @@ banner = """                              Official Wocky NET
          - bots                 bots                list of bots
          - clear                c                   clear screen
 """
-cp_hostname = "QuantumCP >> "
+cp_hostname = "Wocky >> "
 
 def CP():
     print(banner)
