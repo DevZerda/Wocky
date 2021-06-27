@@ -8,10 +8,10 @@ from .discord import *
 
 class MainLogger:
     def Log(logType, notification):
-        logResp = "Log: " + logType + " | Time: " + str(utils.CurrentTime()) + "\n"
+        logResp = "Log: " + logType + " | Time: " + str(utils.CurrentDateTime()) + "\n"
         if "CMD" in logType:
             logResp += "User: " + Strings.CurrentUser + " | IP: " + Strings.CurrentIP + "\n"
-            logResp += "Full CMD: " + Current.CurrentCmd['fullcmd'] + "\n"
+            # logResp += "Full CMD: " + Current.CurrentCmd['fullcmd'] + "\n"
         else:
             logResp = logType
         print(logResp)
