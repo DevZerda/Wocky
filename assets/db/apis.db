@@ -4,4 +4,6 @@ api_Methods=LDAP|DNS|MDNS|SNMP|CLDAP|HOME-SLAP|NTP|DNS-SEC|ARD|UBIQUITI|COAP|COA
 api_Access=true
 api_Funnels=SOCIETY-OVH:LDAP|SOCIETY-HOME:HOME-SLAP
 api_Name=InfernoAPI
-api_URL=
+api_URL=https://infernoapi.com/l4?key=b6badddb981cda69be1c01c3-85ff9057&host={ip}&port={port}&time={time}&method={method}}&pps=500000&threads=1
+api_Access=false
+api_Funnels=
