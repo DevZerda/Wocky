@@ -106,6 +106,7 @@ def CMDHandler(socket, addr):
             CLI_EraserControl.ShowCursor(socket)
         elif "rpg" in data:
             gang = APIFunc.SendAPI_Attack(dataArr[1], dataArr[2], dataArr[3], dataArr[4])
+            socket.send(str(gang).encode())
         elif "admin" in data:
             admin_command(socket, addr, data)
 
