@@ -2,4 +2,6 @@ api_Name=SST
 api_URL=https://divinitysecurity.co/api/api.php?key=YdoxT7p9Jsdcs84K&host={ip}&port={port}&time={time}&method={method}&network=1
 api_Methods=LDAP|DNS|MDNS|SNMP|CLDAP|HOME-SLAP|NTP|DNS-SEC|ARD|UBIQUITI|COAP|COAPV2|QOTD|SIP|TCP-AMP|WRA|WRAV2|NFO-KILLER|NFO-KILLERV2|AUTO-BYPASS-GET|AUTO-BYPASS-POST|EASYJS-GET|EASYJS-RAND|AUTO-BYPASS-CAPTCHA
 api_Access=true
-api_Funnels=SOCIETY-OVH:LDAP|SOCIETY-HOME:HOME-SLAP=
+api_Funnels=SOCIETY-OVH:LDAP|SOCIETY-HOME:HOME-SLAP
+api_Name=InfernoAPI
+api_URL=
