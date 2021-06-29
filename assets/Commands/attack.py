@@ -6,6 +6,8 @@ from ..Logger.main import *
 from ..Logger.discord import *
 from ..Config.main import *
 
+AttackToggle = True
+
 
 def uri_exists_get(uri: str) -> bool:
     try:
