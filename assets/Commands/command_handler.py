@@ -17,6 +17,8 @@ from .attack import *
 from .chatroom import *
 from .admin_handler import *
 from .msg import *
+from .dns import *
+from .mtr import *
 
 """
 help list 
@@ -71,6 +73,10 @@ def CMDHandler(socket, addr):
             socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main") + BannerModify.GetBannerFromFile("methods")).encode())
         elif "geo" in data:
             geo_command(socket, data.split(" "))
+        elif 'dns' in data:
+            dns(socket, data.split(" "))
+        elif 'mtr' in data:
+            mtr(socket, data.split(" "))
         elif "pscan" in data:
             pScan_command(socket, data.split(" "))
         elif "stress" in data:
