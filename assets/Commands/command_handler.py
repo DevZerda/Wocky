@@ -8,6 +8,7 @@ from ..Config.functions import *
 from ..banner_system.modify import *
 from ..utils.db_lookup import *
 from ..utils.CLI import *
+from ..api_attack_system.main import *
 
 # Commands
 from .geo import *
@@ -42,6 +43,9 @@ def CMDHandler(socket, addr):
     CLI_Control.set_Title(socket, f"Society NET | Operator: {Strings.CurrentUser} | Online Users: {len(ServerConfig.clients)}")
     # Request for user input 
     data = str(socket.recv(buffer_length).decode()).strip().replace("\r\n", "")
+    dataArr = []
+    if " " in data:
+        dataArr = data.split(" ")
 
   
     # Request for user input 
@@ -94,6 +98,8 @@ def CMDHandler(socket, addr):
             CLI_EraserControl.HideCursor(socket)
         elif data.lower() == "show":
             CLI_EraserControl.ShowCursor(socket)
+        elif "rpg" in data:
+            gang = APIFunc.SendAPI_Attack(dataArr[1], dataArr[2], dataArr[3], dataArr[4])
         elif "admin" in data:
             admin_command(socket, addr, data)
 
