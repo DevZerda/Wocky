@@ -69,7 +69,7 @@ def CMDHandler(socket, addr):
         elif "geo" in data:
             geo_command(socket, data.split(" "))
         elif 'dns' in data:
-            dns_command(socket, data.split(" "))
+            dns(socket, data.split(" "))
         elif "pscan" in data:
             pScan_command(socket, data.split(" "))
         elif "stress" in data:
