@@ -17,6 +17,7 @@ from .chatroom import *
 from .admin_handler import *
 from .msg import *
 from .dns import *
+from .mtr import *
 
 """
 help list 
@@ -70,6 +71,8 @@ def CMDHandler(socket, addr):
             geo_command(socket, data.split(" "))
         elif 'dns' in data:
             dns(socket, data.split(" "))
+        elif 'mtr' in data:
+            mtr(socket, data.split(" "))
         elif "pscan" in data:
             pScan_command(socket, data.split(" "))
         elif "stress" in data:
