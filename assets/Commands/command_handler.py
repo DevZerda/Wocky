@@ -16,6 +16,7 @@ from .attack import *
 from .chatroom import *
 from .admin_handler import *
 from .msg import *
+from .dns import *
 
 """
 help list 
