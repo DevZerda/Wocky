@@ -15,32 +15,32 @@ Stopping for 5 seconds......
 ╔════════════
 ║  Welcome To
 ╚════════════
-SLEEP(3)
+SLEEP(2)
 {CLEAR}
              ═══════════╗
               Wocky NET ║
              ═══════════╝
-SLEEP(3)
+SLEEP(2)
 {CLEAR}
 ╔════════════
 ║  Welcome To
 ╚════════════
-SLEEP(1)
+SLEEP(2)
 {CLEAR}
              ═══════════╗
               Wocky NET ║
              ═══════════╝
-SLEEP(3)
+SLEEP(2)
 {CLEAR}
 ╔════════════
 ║  Welcome To
 ╚════════════
-SLEEP(3)
+SLEEP(2)
 {CLEAR}
              ═══════════╗
               Wocky NET ║
              ═══════════╝
-SLEEP(1)
+SLEEP(2)
 {CLEAR}
 ╔═══════════════════════╗
 ║  Welcome To Wocky NET ║
