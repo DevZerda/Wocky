@@ -82,6 +82,9 @@ def admin_command(socket, addr, data):
                 pass
             elif args[1] == "updateapi":
                 pass
+            elif args[1] == "change_cooldown":
+                Strings.Cooldown = int(args[2])
+                socket.send(f"[+] Cooldown successfully changed ({args[2]})\r\n".encode())
         else:
             lol = BannerModify.GetBannerFromFile("admin_help")
             socket.send(str(f"{lol}\r\n").encode())
