@@ -7,7 +7,8 @@ from ..auth.crud import *
 from ..Logger.main import *
 from ..banner_system.modify import *
 from ..Config.main import *
-from .chatroom import *
+from ..utils.main import *
+from ..Config.functions import *
 
 buffer_length = 1024
 
@@ -53,9 +54,15 @@ def login(socket, addr):
             Strings.CurrentIP = addr[0]
             userinfo = CRUD
             socket.send(str(Strings.MainColors['Clear'] + CustomBannerMaker.CreateMOTD(utils.GetMOTD()) + BannerModify.GetBannerFromFile("main") + "\r\n").encode())
-            socket.send(f"Welcome to Society {username}\r\n\x1b[37m╔═[\x1b[35m{Strings.CurrentUser}\x1b[37m@\x1b[35mSociety\x1b[37m]\r\n╚════➢\x1b[32m ".encode())
+            socket.send(f"Welcome to Wocky {username}\r\n\x1b[37m╔═[\x1b[35m{Strings.CurrentUser}\x1b[37m@\x1b[35mWocky\x1b[37m]\r\n╚════➢\x1b[32m ".encode())
             MainLogger.Log(f"login: {username} | Time: {utils.CurrentDateTime()}", True)
-            ServerConfig.clients.append([username, socket, addr[0], addr[1]])
+            CurrentConn = ServerUtils.GetCurrentConn(socket)
+            CurrnentAttackToggle = False
+            if CurrentConn == 0 or CurrentConn == "0":
+                CurrnentAttackToggle = True
+            else:
+                CurrnentAttackToggle = False
+            ServerConfig.clients.append([username, socket, addr[0], addr[1], CurrnentAttackToggle])
         else:
             socket.send(f"{Strings.MainColors['Reset']}[x] Error, Incorrect username or password. Try again....".encode())
             time.sleep(4)
