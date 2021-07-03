@@ -53,8 +53,9 @@ class CrudFunctions:
             return True
         else:
             return False
-    # ('root','none','niggered','2','1200','2','2')
-    #     0     1        2       3     4    5   6
+    #   user    ip      pw    lvl mtime  conn ongoing admin expiry
+    # ('root','none','lulzsec','2','1200','2','0','2','0/0/0')
+    #     0     1        2       3     4   5   6   7    8
     def isAdmin(username):
         info = CRUD.GetUser(username)
         if info == "[x] Error, No user found!":
@@ -76,3 +77,18 @@ class CrudFunctions:
             return True
         else:
             return False
+    
+    def AttackValidation(user):
+        UserInfo = CRUD.GetUser(user)
+        if "[x]" in UserInfo:
+            return False
+
+        InfoArr = UserInfo.split(",")
+        if int(InfoArr[6]) == int(InfoArr[5]):
+            return False
+        else:
+            return True
+
+    def DownOneConn(user):
+        ## fuck me 
+        pass
