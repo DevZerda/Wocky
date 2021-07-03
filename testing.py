@@ -1,6 +1,6 @@
 import os, sys, time
 
-Banner = open("lol.txt", "r").read()
+Banner = open("lol.txt", "r", encoding="utf8").read()
 
 output_lines = Banner.split("\n")
 
