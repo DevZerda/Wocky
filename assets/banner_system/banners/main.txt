@@ -4,14 +4,14 @@
                            ╚═╝╚═╝╚═╝╩╚═╝ ╩  ╩   ╚═╝╝╚╝╚═╝       
                            ═╦══════════════════════════╦═
                   ╔═════════╩══════════════════════════╩═════════╗
-                  ║   Welcome To The Start Screen Of Society C2  ║
-                  ║      Powered By SocietyAPI and Many More.    ║
+                  ║   Welcome To The Start Screen Of Wocky C2  ║
+                  ║      Powered By WockyAPI and Many More.    ║
                   ╚╦════════════════════════════════════════════╦╝
                    ╚══╦══════════════════{GREEN}════════════════════╦══╝
                       ║ - - -     discord.gg/scty     - - -  ║
                    ╔══╩══════════════════════════════════════╩══╗
                   ╔╩════════════════════════════════════════════╩╗
                   ║   Type 'help' to see all Cynicals Commands.  ║
-                  ║  Copyright 2021 Society All Rights Reserved  ║
+                  ║  Copyright 2021 Wocky All Rights Reserved  ║
                   ╚══════════════════════════════════════════════╝
                       User: {PURPLE}{USERNAME}{GREEN} | Current IP: {PURPLE}{CURRENTIP}{RESET}
