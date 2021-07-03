@@ -19,6 +19,7 @@ class Strings:
 	CurrentMtime = ""
 	CurrentConn = ""
 	CurrentAdmin = ""
+	Cooldown = 60
 
 	appInfo = {
 		"appCreator": "Zerda",
