@@ -1,4 +1,5 @@
 # Modules
+from assets.Config.main import ServerConfig
 import os, sys, time
 
 # Files
@@ -85,6 +86,16 @@ class CLI_EraserControl:
 
     def ShowCursor(socket):
         socket.send("\033[?25h\033[?0c".encode())
+
+    def FlashCursor(socket, name):
+        for socket in ServerConfig.clients:
+            if socket[1] != socket or socket[0] != name:
+                return "[x] Error, Socket wasn't found to start flashing cursor!"
+        while(True):
+            socket.send("\033[?251".encode())
+            time.sleep(2)
+            socket.send("\033[?25h\033[?0c".encode())
+                
 
 
 def FlashCursor(socket):
