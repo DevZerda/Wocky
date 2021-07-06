@@ -113,6 +113,8 @@ def CMDHandler(socket, addr):
             socket.send(str(gang).encode())
         elif "admin" in data:
             admin_command(socket, addr, data)
+        else:
+            socket.send(f"[x] Error, Invalid Command".encode())
 
         socket.send(str(f"\x1b[37m╔═[\x1b[35m{Strings.CurrentUser}\x1b[37m@\x1b[35mWocky\x1b[37m]\r\n╚════➢\x1b[32m ").encode())
 
