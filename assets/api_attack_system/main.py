@@ -161,15 +161,17 @@ class APIFunc:
 
         if len(APIs) > 0:
             for u in APIs:
-                # try:
-                u[1] = u[1].replace(r"[ip]", f"{ip}")
-                u[1] = u[1].replace(r"[host]", f"{ip}")
-                u[1] = u[1].replace(r"[port]", f"{port}")
-                u[1] = u[1].replace(r"[time]", f"{time}")
-                lol = APICrud.fixFunneledMethods(u[0], method)
-                u[1] = u[1].replace(r"[method]", lol)
-                print(u[1])
-                output = requests.get(f"{u[1]}").text
+                try:
+                    u[1] = u[1].replace(r"[ip]", f"{ip}")
+                    u[1] = u[1].replace(r"[host]", f"{ip}")
+                    u[1] = u[1].replace(r"[port]", f"{port}")
+                    u[1] = u[1].replace(r"[time]", f"{time}")
+                    lol = APICrud.fixFunneledMethods(u[0], method)
+                    u[1] = u[1].replace(r"[method]", lol)
+                    print(u[1])
+                    output = requests.get(f"{u[1]}").text
+                except:
+                    print("failed")
                 try:
                     print(output) ## debug
                 except:
@@ -178,15 +180,17 @@ class APIFunc:
                 # except:
                 #     Response += f"[x] Error, Failed to send to {u}\r\n"
         else:
-            # try:
-            APIs[1] = APIs[1].replace(r"[ip]", f"{ip}")
-            APIs[1] = APIs[1].replace(r"[host]", f"{ip}")
-            APIs[1] = APIs[1].replace(r"[port]", f"{port}")
-            APIs[1] = APIs[1].replace(r"[time]", f"{time}")
-            lol = APICrud.fixFunneledMethods(APIs[0], method)
-            APIs[1] = APIs[1].replace(r"[method]", lol)
-            print(f"Line 174: {APIs[1]}")
-            output = requests.get(f"{APIs[1]}").text
+            try:
+                APIs[1] = APIs[1].replace(r"[ip]", f"{ip}")
+                APIs[1] = APIs[1].replace(r"[host]", f"{ip}")
+                APIs[1] = APIs[1].replace(r"[port]", f"{port}")
+                APIs[1] = APIs[1].replace(r"[time]", f"{time}")
+                lol = APICrud.fixFunneledMethods(APIs[0], method)
+                APIs[1] = APIs[1].replace(r"[method]", lol)
+                print(f"Line 174: {APIs[1]}")
+                output = requests.get(f"{APIs[1]}").text
+            except:
+                print("Failed")
             try:
                 print(output) ## debug
             except:
