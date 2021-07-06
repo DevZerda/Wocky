@@ -91,11 +91,13 @@ class CRUD:
             print("File: /assets/auth/crud.py | Line: 62 | Function updateUser(user, newlvl, newmtime, newadmin)\r\n[x] Error, Unable to find database file!\r\n")
             exit()
 
-    def CreateRegisterToken(level, time, admin):
+
+class Registeration:
+    def CreateRegisterToken(level, conn, time, admin):
         try:
             tokenDB = open("./assets/db/tokens.db", "a")
             new_token = subprocess.getoutput("tr -dc A-Za-z0-9 </dev/urandom | head -c 45 ; echo ''")
-            tokenDB.write(f"token={new_token},level={level},time={time},admin={admin}")
+            tokenDB.write(f"token={new_token},level={level},conn={conn},time={time},admin={admin}")
             tokenDB.close()
             return f"Token generated: {new_token}\r\n"
         except:
@@ -117,3 +119,6 @@ class CRUD:
         except:
             print("File: /assets/auth/crud.py | Line: 98 | Function: GetTokenInfo(rtoken)\r\n[x] Error, Unable to find tokan database file!\r\n")
             exit()
+
+    def SetTokenInfo(user):
+        pass
