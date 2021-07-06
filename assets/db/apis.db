@@ -1,5 +1,5 @@
 api_Name=InfernoAPI
-api_URL=https://infernoapi.com/l4?key=b6badddb981cda69be1c01c3-85ff9057&host={ip}&port={port}&time={time}&method={method}&pps=500000&threads=1
+api_URL=https://lawlz/l4?key=b6badd&host=[ip]&port=[port]&time=[time]&method=[method]&pps=500000&threads=1
 api_Methods=HOME-KILL|LDAP|WAR-READY|CHARGEN|OVH-TCP|OVH-RIOT|OVH-C&C|100UP-STOMP|NFO-RIOT|NFO-TCP|WRA|NFO-KILLER|INFERNO-GAME|FORTNITE|APEX-DROP|ROBLOX-XV|R6|2K-DROP|TEMPEST-DROP|WEBSERVER-XV|PSN-RAPE|HYDRA-DROP|KILLALL|PORT-FLOOD|HTTP-RAGE|HTTP-BURST|HTTP-RAPE
 api_Access=false
 api_Funnels=
