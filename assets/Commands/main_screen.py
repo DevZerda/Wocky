@@ -19,8 +19,8 @@ def MainScreen(socket, addr):
     # try:
     if int(option_dude) == 1:
         login(socket,addr)
-    elif int(option_dude) == 2:
-        register(socket,addr)
+    # elif int(option_dude) == 2:
+    #     register(socket,addr)
     # elif int(option_dude) == 3 or option_dude == "chatroom":
     #     ServerConfig.clients.append(["Guest" + str(random.randint(0, 99999)), socket, addr[0], addr[1]])
     #     WockyChat(socket, addr)
@@ -76,6 +76,7 @@ def register(socket, addr): ##) Function not finished
     username = socket.recv(buffer_length).decode().strip().replace("\r\n","")
     socket.send("Password: ".encode())
     password = socket.recv(buffer_length).decode().strip().replace("\r\n", "")
+
     # Current.CurrentInfo['Username'] = username
 
 
