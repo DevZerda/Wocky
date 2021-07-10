@@ -14,7 +14,7 @@ def geo_command(socket, argv):
     """
     if len(argv) == 2:
         jsonResp = (requests.get(
-            "http://extreme-ip-lookup.com/json/" + argv[1]).text)
+            "https://api.hackertarget.com/geoip/?q=" + argv[1]).text)
         fix = jsonResp.replace("\",\"", "\r\n")
         fix = fix.replace("\"", "").replace("{", "").replace("}", "")
         socket.send(f"{fix}\r\n".encode(""))
